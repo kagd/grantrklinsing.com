@@ -1,7 +1,7 @@
 ---
 title: Divide a Number by 3 Without Operators in Javascript
 date: 2012-08-20 05:15 UTC
-tags: code golf
+tags: javascript, code golf
 ---
 
 **Code Golf**: show off your code-fu by trying to solve coding problems using the least number of keystrokes.
