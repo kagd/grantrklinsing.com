@@ -86,11 +86,14 @@ page "/feed.xml", layout: false
 helpers do
   def article_image(article)
     begin
-      path = "#{ article.metadata[:page]['tags'].split(',')[0] }.svg"
+      image_name = "#{ article.metadata[:page]['tags'].split(',')[0] }.svg"
+      unless File.exist? File.expand_path("source/images/#{ image_name }")
+        image_name = 'logo.svg'
+      end
     rescue
-      path = 'logo.svg'
+      image_name = 'logo.svg'
     end
-    image_tag path
+    image_tag image_name
   end
 end
 
