@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(http-equiv='X-UA-Compatible' content='IE=edge;chrome=1')
+    title Grant R. Klinsing #{ " - #{ current_article.title }" unless current_article.nil? }
+    = feed_tag(:atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed")
+    link(href='http://fonts.googleapis.com/css?family=Ubuntu:300,300italic,500,700,500italic,700italic' rel='stylesheet' type='text/css')
+    = stylesheet_link_tag 'application', 'syntax_highlighter/monokai'
+
+  body(class="#{ page_classes }")
+    nav.navbar.navbar-default
+      .container-fluid
+        .row
+          .col-sm-6.col-sm-offset-3
+            .navbar-header
+              = link_to '/', class: 'navbar-brand' do
+                = image_tag 'logo.svg'
+
+            / .collapse.navbar-collapse
+            /   ul.nav.navbar-nav.navbar-right
+            /     li Grant R Klinsing
+
+    .container-fluid
+      section#main.row(role="main")
+        .col-sm-6.col-sm-offset-3
+          - if current_article
+            = partial 'article_header', locals: {article: current_article}
+            .article-body
+              = yield
+
+          - else
+            = yield
+
+        / .col-sm-3
+        /   aside
+        /     h2 Recent Articles
+        /     ul.list-unstyled
+        /       - blog.articles[0...10].each do |article|
+        /         li
+        /           = link_to article.title, article
+        /           .date= article.date.strftime('%B %d / %Y')
+
+    script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js")
+    javascript:
+      hljs.initHighlightingOnLoad();

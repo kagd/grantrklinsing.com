@@ -1,0 +1,6 @@
+.article-header
+  = article_image(article)
+  h1= link_to article.title, article
+  h2.date
+    span<>= article.date.strftime('%Y /')
+    span<>= article.date.strftime('%B %d')

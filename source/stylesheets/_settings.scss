@@ -1,0 +1,14 @@
+// For More Bootstrap Vars:
+// https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
+
+$gray-base: #000;
+$gray-lighter: lighten($gray-base, 75%);
+$brand-primary: #1089B6;
+
+$font-size-base: 14px;
+$font-size-h1: ceil(($font-size-base * 1.71)); // ~24px
+$font-size-h2: floor(($font-size-base * 1.43)); // ~20px
+$font-size-h3: ceil(($font-size-base * 1.29)); // ~18px
+$font-size-h4: ceil(($font-size-base * 1.14)); // ~16px
+$font-size-h5: $font-size-base !default;
+$font-size-h6: ceil(($font-size-base * 0.85)); // ~12px

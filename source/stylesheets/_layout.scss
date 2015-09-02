@@ -1,0 +1,77 @@
+$max-width-height: 30px;
+
+body {
+  color: $gray-dark;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 100;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.article-header {
+  position: relative;
+
+  h1 {
+    margin-bottom: 5px;
+  }
+
+  .date {
+    color: $gray-lighter;
+    font-size: $font-size-h5;
+    font-weight: 100;
+    margin-top: 0;
+
+    span + span {
+      color: $gray-light;
+    }
+  }
+
+  img {
+    left: -($grid-gutter-width / 2) - $max-width-height;
+    max-height: $max-width-height;
+    max-width: $max-width-height;
+    position: absolute;
+    top: 5px;
+  }
+}
+
+.article-body {
+  margin-top: $grid-gutter-width;
+}
+
+pre {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  word-wrap: inherit;
+
+  code.hljs {
+    border-radius: 4px;
+    padding: 8px 10px;
+    white-space: inherit;
+  }
+}
+
+.navbar-default {
+  // background-color: #ED255B;
+}
+
+.navbar-brand {
+  padding-top: 10px;
+
+  img {
+    width: 50px;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .navbar {
+    border-radius: 0;
+  }
+}
