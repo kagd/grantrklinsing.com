@@ -7,6 +7,7 @@ html
     = feed_tag(:atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed")
     link(href='http://fonts.googleapis.com/css?family=Ubuntu:300,300italic,500,700,500italic,700italic' rel='stylesheet' type='text/css')
     = stylesheet_link_tag 'application', 'syntax_highlighter/monokai'
+    = favicon_tag 'images/favicon.ico'
 
   body(class="#{ page_classes }")
     nav.navbar.navbar-default
