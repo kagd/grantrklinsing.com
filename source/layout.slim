@@ -18,9 +18,14 @@ html
               = link_to '/', class: 'navbar-brand' do
                 = image_tag 'logo.svg'
 
-            / .collapse.navbar-collapse
-            /   ul.nav.navbar-nav.navbar-right
-            /     li Grant R Klinsing
+            .collapse.navbar-collapse
+              ul.nav.navbar-nav.navbar-right
+                li
+                  a.github(href="http://github.com/kagd" target="_blank")= fa_icon('github')
+                li
+                  a.twitter(href="http://twitter.com/gklinsing" target="_blank")= fa_icon('twitter')
+                li
+                  a.profile(href="http://careers.stackoverflow.com/gklinsing" target="_blank")= image_tag 'https://s.gravatar.com/avatar/0074a6a87ea8d82d6e4cd840226db943?s=50'
 
     .container-fluid
       section#main.row(role="main")

@@ -10,6 +10,8 @@ gem 'redcarpet',      '~> 3.3.2'
 gem "middleman-syntax", '~> 2.0.0'
 # gem 'middleman-spellcheck'
 gem 'middleman-deploy', '~> 1.0'
+gem 'font-awesome-sass', '~> 4.4.0'
+gem 'compass',        '~> 1.0.3'
 
 # For feed.xml.builder
 gem "builder",        "~> 3.0"

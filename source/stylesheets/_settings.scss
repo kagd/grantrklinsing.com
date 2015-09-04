@@ -3,7 +3,10 @@
 
 $gray-base: #000;
 $gray-lighter: lighten($gray-base, 75%);
-$brand-primary: #1089B6;
+$brand-primary: #1189B6;
+$brand-warning: #EE265C;
+$link-color: $brand-primary;
+$link-hover-color: $brand-warning;
 
 $font-size-base: 14px;
 $font-size-h1: ceil(($font-size-base * 1.71)); // ~24px
@@ -12,3 +15,9 @@ $font-size-h3: ceil(($font-size-base * 1.29)); // ~18px
 $font-size-h4: ceil(($font-size-base * 1.14)); // ~16px
 $font-size-h5: $font-size-base !default;
 $font-size-h6: ceil(($font-size-base * 0.85)); // ~12px
+
+// Compass Transition Settings
+$default-transition-property : all;
+$default-transition-duration : 250ms;
+$default-transition-function : ease-in-out;
+$default-transition-delay    : false;
