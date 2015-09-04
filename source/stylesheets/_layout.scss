@@ -70,6 +70,10 @@ pre {
   }
 }
 
+#disqus_thread {
+  margin-top: $grid-gutter-width * 2;
+}
+
 @media (min-width: $screen-sm-min) {
   .navbar {
     border-radius: 0;
