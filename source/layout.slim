@@ -7,6 +7,7 @@ html
     = feed_tag(:atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed")
     link(href='http://fonts.googleapis.com/css?family=Ubuntu:300,300italic,500,700,500italic,700italic' rel='stylesheet' type='text/css')
     = stylesheet_link_tag 'application', 'syntax_highlighter/monokai'
+    = favicon_tag 'images/favicon.ico'
 
   body(class="#{ page_classes }")
     nav.navbar.navbar-default
@@ -17,9 +18,14 @@ html
               = link_to '/', class: 'navbar-brand' do
                 = image_tag 'logo.svg'
 
-            / .collapse.navbar-collapse
-            /   ul.nav.navbar-nav.navbar-right
-            /     li Grant R Klinsing
+            .collapse.navbar-collapse
+              ul.nav.navbar-nav.navbar-right
+                li
+                  a.github(href="http://github.com/kagd" target="_blank")= fa_icon('github')
+                li
+                  a.twitter(href="http://twitter.com/gklinsing" target="_blank")= fa_icon('twitter')
+                li
+                  a.profile(href="http://careers.stackoverflow.com/gklinsing" target="_blank")= image_tag 'https://s.gravatar.com/avatar/0074a6a87ea8d82d6e4cd840226db943?s=50'
 
     .container-fluid
       section#main.row(role="main")
@@ -28,6 +34,19 @@ html
             = partial 'article_header', locals: {article: current_article}
             .article-body
               = yield
+              div#disqus_thread
+              javascript:
+                /* * * CONFIGURATION VARIABLES * * */
+                var disqus_shortname = 'kagdgithubio';
+                var disqus_identifier = '#{ current_article.slug }';
+                var disqus_title = '#{ current_article.title }';
+                /* * * DON'T EDIT BELOW THIS LINE * * */
+                (function() {
+                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              noscript Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
 
           - else
             = yield
@@ -44,3 +63,11 @@ html
     script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js")
     javascript:
       hljs.initHighlightingOnLoad();
+
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-67203020-1', 'auto');
+      ga('send', 'pageview');

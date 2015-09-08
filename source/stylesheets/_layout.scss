@@ -1,3 +1,5 @@
+@import "compass/css3/filter";
+
 $max-width-height: 30px;
 
 body {
@@ -10,8 +12,15 @@ h1 {
   font-weight: 100;
 }
 
-a:hover {
-  text-decoration: none;
+a {
+  color: $brand-primary;
+  @include single-transition(color);
+
+  &:hover,
+  &:focus {
+    color: $brand-warning;
+    text-decoration: none;
+  }
 }
 
 .article-list {
@@ -62,20 +71,40 @@ pre {
   }
 }
 
-.navbar-default {
-  // background-color: #ED255B;
+.navbar {
+  .fa {
+    font-size: $font-size-h1;
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  @extend a;
 }
 
 .navbar-brand {
-  padding-top: 10px;
+  padding-top: 0;
 
   img {
     width: 50px;
   }
 }
 
+#disqus_thread {
+  margin-top: $grid-gutter-width * 2;
+}
+
 @media (min-width: $screen-sm-min) {
   .navbar {
     border-radius: 0;
+  }
+
+  .navbar-default .navbar-nav.navbar-right > li > a {
+    padding: 13px 8px 0;
+
+    &.profile {
+      @include filter(grayscale(0.9));
+      opacity: 0.8;
+      padding-top: 0;
+    }
   }
 }
