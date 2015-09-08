@@ -93,6 +93,16 @@ pre {
   margin-top: $grid-gutter-width * 2;
 }
 
+.lang-yml {
+  background: #23241f;
+  border-radius: 4px;
+  color: #f8f8f2;
+  display: block;
+  overflow-x: auto;
+  padding: 8px 10px;
+  white-space: inherit;
+}
+
 @media (min-width: $screen-sm-min) {
   .navbar {
     border-radius: 0;
