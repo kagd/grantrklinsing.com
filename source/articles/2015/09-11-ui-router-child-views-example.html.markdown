@@ -3,6 +3,7 @@ title: UI Router Child Views Example
 date: 2015-09-11 05:18 UTC
 tags: angular, ui-router
 downloads: UI Router Example | 09-11-ui-router-child-views-example.zip
+demos: UI Router Demo | 2015/09-11-ui-router-child-views-demo.html
 ---
 
 Since you are here, I am assuming that you are wondering how to setup your angular

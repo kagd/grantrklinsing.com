@@ -35,10 +35,17 @@ html
             .article-body
               = yield
 
-              - if current_article.data.downloads
-                hr
-                h4 Article Downloads
-                = article_downloads(current_article, 'btn btn-primary')
+              .row
+                .col-sm-6
+                  - if current_article.data.downloads
+                    hr
+                    h4 Article Downloads
+                    = article_downloads(current_article, 'btn btn-primary')
+                .col-sm-6
+                  - if current_article.data.demos
+                    hr
+                    h4 Article Demos
+                    = article_demos(current_article, 'btn btn-primary')
 
               div#disqus_thread
               javascript:

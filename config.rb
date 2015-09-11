@@ -113,7 +113,14 @@ helpers do
   def article_downloads(article, link_class=nil)
     article.data.downloads.split(',').map do |download|
       text, link = *download.split('|').map{|item| item.strip }
-      link_to text, "../../#{link}", class: link_class
+      link_to text, "../../#{link}", class: link_class, target: '_blank'
+    end.join(' ')
+  end
+
+  def article_demos(article, link_class=nil)
+    article.data.demos.split(',').map do |demo|
+      text, link = *demo.split('|').map{|item| item.strip }
+      link_to text, "/demos/#{link}", class: link_class, target: '_blank'
     end.join(' ')
   end
 end
