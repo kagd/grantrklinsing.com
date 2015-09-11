@@ -75,7 +75,6 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .tex .hljs-special,
 .hljs-header,
 .hljs-attribute,
-.hljs-symbol,
 .hljs-symbol .hljs-string,
 .hljs-tag .hljs-title,
 .hljs-value,
@@ -84,6 +83,10 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .css .unit,
 .css .hljs-important {
   color: #f92672;
+}
+
+.hljs-symbol {
+  color: #AE81FF;
 }
 
 .hljs-function .hljs-keyword,
@@ -98,7 +101,6 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 
 .hljs-variable,
 .hljs-params,
-.hljs-class .hljs-title,
 .hljs-aspect .hljs-title {
   color: #f8f8f2;
 }
@@ -107,7 +109,6 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .css .hljs-id,
 .hljs-subst,
 .hljs-type,
-.ruby .hljs-class .hljs-parent,
 .hljs-built_in,
 .django .hljs-template_tag,
 .django .hljs-variable,
@@ -126,7 +127,12 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .hljs-prompt,
 .hljs-link_label,
 .hljs-link_url {
-  color: #e6db74;
+  color: #F4E46C;
+}
+
+.hljs-class .hljs-title,
+.ruby .hljs-class .hljs-parent {
+  color: #A6DC2A;
 }
 
 .hljs-comment,
