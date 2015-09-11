@@ -103,6 +103,10 @@ pre {
   white-space: inherit;
 }
 
+hr {
+  border-color: lighten($gray-base, 95%);
+}
+
 @media (min-width: $screen-sm-min) {
   .navbar {
     border-radius: 0;
