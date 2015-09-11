@@ -10,26 +10,31 @@ html
     = favicon_tag 'images/favicon.ico'
 
   body(class="#{ page_classes }")
-    nav.navbar.navbar-default
+    header
       .container-fluid
         .row
-          .col-sm-6.col-sm-offset-3
-            .navbar-header
-              = link_to '/', class: 'navbar-brand' do
+          .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.wrapper
+            nav
+              = link_to '/', class: 'brand' do
                 = image_tag 'logo.svg'
+                .brand-name
+                  span> Grant
+                  span< Klinsing
 
-            .collapse.navbar-collapse
-              ul.nav.navbar-nav.navbar-right
-                li
-                  a.github(href="http://github.com/kagd" target="_blank")= fa_icon('github')
-                li
-                  a.twitter(href="http://twitter.com/gklinsing" target="_blank")= fa_icon('twitter')
-                li
-                  a.profile(href="http://careers.stackoverflow.com/gklinsing" target="_blank")= image_tag 'https://s.gravatar.com/avatar/0074a6a87ea8d82d6e4cd840226db943?s=50'
+              ul
+                li.menu.visible-xs-inline-block
+                  a(href="#")= fa_icon('bars')
+                li.github.hidden-xs
+                  a(href="http://github.com/kagd" target="_blank")= fa_icon('github')
+                li.twitter.hidden-xs
+                  a(href="http://twitter.com/gklinsing" target="_blank")= fa_icon('twitter')
+                li.stack-overflow.hidden-xs
+                  a(href="http://careers.stackoverflow.com/gklinsing" target="_blank")= fa_icon('stack-overflow')
+                  / = image_tag 'https://s.gravatar.com/avatar/0074a6a87ea8d82d6e4cd840226db943?s=50'
 
     .container-fluid
       section#main.row(role="main")
-        .col-sm-6.col-sm-offset-3
+        .col-sm-7.col-sm-offset-3.col-md-6
           - if current_article
             = partial 'article_header', locals: {article: current_article, is_single_article: true}
             .article-body

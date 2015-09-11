@@ -1,5 +1,3 @@
-@import "compass/css3/filter";
-
 $max-width-height: 30px;
 
 body {
@@ -18,13 +16,17 @@ a {
 
   &:hover,
   &:focus {
-    color: $brand-warning;
     text-decoration: none;
   }
 }
 
 .article-list {
   margin-bottom: $grid-gutter-width;
+}
+
+code {
+  background-color: fade-out($gray-lighter, 0.8);
+  color: #000;
 }
 
 .article-header {
@@ -71,24 +73,6 @@ pre {
   }
 }
 
-.navbar {
-  .fa {
-    font-size: $font-size-h1;
-  }
-}
-
-.navbar-default .navbar-nav > li > a {
-  @extend a;
-}
-
-.navbar-brand {
-  padding-top: 0;
-
-  img {
-    width: 50px;
-  }
-}
-
 #disqus_thread {
   margin-top: $grid-gutter-width * 2;
 }
@@ -110,15 +94,5 @@ hr {
 @media (min-width: $screen-sm-min) {
   .navbar {
     border-radius: 0;
-  }
-
-  .navbar-default .navbar-nav.navbar-right > li > a {
-    padding: 13px 8px 0;
-
-    &.profile {
-      @include filter(grayscale(0.9));
-      opacity: 0.8;
-      padding-top: 0;
-    }
   }
 }

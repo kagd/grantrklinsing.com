@@ -1,0 +1,92 @@
+header {
+  background-image: url('/images/cityscape.jpg');
+  background-position: center center;
+  background-size: cover;
+
+  .container-fluid {
+    background-color: fade-out(#fff, 0.1);
+  }
+
+  nav {
+    height: 200px;
+    position: relative;
+  }
+
+  .brand {
+    display: inline-block;
+
+    img {
+      height: 50px;
+      vertical-align: top;
+    }
+
+    span {
+      display: block;
+    }
+  }
+
+  .brand-name {
+    color: $gray-dark;
+    display: inline-block;
+    font-weight: 300;
+    padding: 5px 0 0 8px;
+    text-transform: lowercase;
+  }
+
+  ul {
+    background-color: $brand-primary;
+    list-style: none;
+    margin: 0 (-$grid-gutter-width / 2) 0 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    a {
+      color: darken(#fff, 10%);
+      display: block;
+      font-size: $font-size-h1;
+      padding: 8px 15px;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    li.twitter a{
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+
+  .menu {
+    display: none;
+  }
+}
+
+.articles header {
+  nav {
+    height: 100px;
+  }
+
+  li {
+    display: inline-block;
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  header {
+    .container-fluid {
+      background-color: transparent;
+    }
+
+    nav {
+      background-color: fade-out(#fff, 0.1);
+      padding: 0 ($grid-gutter-width / 2);
+    }
+
+    ul {
+      margin-right: ($grid-gutter-width / 2);
+    }
+  }
+}
