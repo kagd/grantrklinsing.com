@@ -31,9 +31,15 @@ html
       section#main.row(role="main")
         .col-sm-6.col-sm-offset-3
           - if current_article
-            = partial 'article_header', locals: {article: current_article}
+            = partial 'article_header', locals: {article: current_article, is_single_article: true}
             .article-body
               = yield
+
+              - if current_article.data.downloads
+                hr
+                h4 Article Downloads
+                = article_downloads(current_article, 'btn btn-primary')
+
               div#disqus_thread
               javascript:
                 /* * * CONFIGURATION VARIABLES * * */

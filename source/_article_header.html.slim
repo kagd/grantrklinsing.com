@@ -4,3 +4,8 @@
   h2.date
     span<>= article.date.strftime('%Y /')
     span<>= article.date.strftime('%B %d')
+
+  - if is_single_article && article.data.downloads
+    hr
+    strong> Article Downloads:
+    = article_downloads(article)

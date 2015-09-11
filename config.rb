@@ -110,9 +110,12 @@ helpers do
     image_tag image_name
   end
 
-  # def icon
-  #   include
-  # end
+  def article_downloads(article, link_class=nil)
+    article.data.downloads.split(',').map do |download|
+      text, link = *download.split('|').map{|item| item.strip }
+      link_to text, "../../#{link}", class: link_class
+    end.join(' ')
+  end
 end
 
 set :css_dir, 'stylesheets'
