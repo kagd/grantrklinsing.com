@@ -15,6 +15,14 @@ body {
   @include single-transition(all);
   @include transform( translateX(100%) );
 
+  li {
+    border-top: 1px solid darken($gray-light, 5%);
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
   a {
     background-color: $gray-light;
     color: #fff;
@@ -35,7 +43,6 @@ body {
 
   .fa {
     @include single-transition(background-color);
-    border-right: 1px solid darken($gray-light, 10%);
     font-size: $font-size-h2;
     line-height: $grid-gutter-width;
     margin-right: 5px;
