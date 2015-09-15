@@ -1,15 +1,29 @@
 doctype html
-html
+html(ng-app="kagd")
   head
     meta(charset="utf-8")
     meta(http-equiv='X-UA-Compatible' content='IE=edge;chrome=1')
+    meta(content="width=device-width, initial-scale=1.0" name="viewport")
     title Grant R. Klinsing #{ " - #{ current_article.title }" unless current_article.nil? }
     = feed_tag(:atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed")
     link(href='http://fonts.googleapis.com/css?family=Ubuntu:300,300italic,500,700,500italic,700italic' rel='stylesheet' type='text/css')
     = stylesheet_link_tag 'application', 'syntax_highlighter/monokai'
     = favicon_tag 'images/favicon.ico'
 
-  body(class="#{ page_classes }")
+  body(class="#{ page_classes }" ng-class="{'menu-open': appCtrl.menuOpen}" ng-controller="ApplicationController as appCtrl")
+    ul.mobile-menu
+      li.github
+        a(href="http://github.com/kagd" target="_blank")
+          =fa_icon('github')
+          | kagd
+      li.twitter
+        a(href="http://twitter.com/gklinsing" target="_blank")
+          =fa_icon('twitter')
+          | @gklinsing
+      li.stack-overflow
+        a(href="http://careers.stackoverflow.com/gklinsing" target="_blank")
+          =fa_icon('stack-overflow')
+          | Stack Overflow
     header
       .container-fluid
         .row
@@ -23,7 +37,7 @@ html
 
               ul
                 li.menu.visible-xs-inline-block
-                  a(href="#")= fa_icon('bars')
+                  a(href="#" ng-click="appCtrl.toggleMenu()")= fa_icon('bars')
                 li.github.hidden-xs
                   a(href="http://github.com/kagd" target="_blank")= fa_icon('github')
                 li.twitter.hidden-xs
@@ -78,7 +92,7 @@ html
         /           = link_to article.title, article
         /           .date= article.date.strftime('%B %d / %Y')
 
-    script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js")
+    = javascript_include_tag('application', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js')
     javascript:
       hljs.initHighlightingOnLoad();
 
