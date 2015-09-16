@@ -1,5 +1,7 @@
 .article-header
-  = article_image(article)
+  = tag_link_from_article article do
+    = article_image(article)
+
   h1= link_to article.title, article
   h2.date
     span<>= article.date.strftime('%Y /')

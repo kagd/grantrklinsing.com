@@ -91,6 +91,32 @@ hr {
   border-color: lighten($gray-base, 95%);
 }
 
+.page-links {
+  margin: $grid-gutter-width 0;
+}
+
+.tags {
+  img {
+    height: 20px;
+  }
+
+  a {
+    display: block;
+    padding: 5px 0;
+  }
+
+  span.img {
+    display: inline-block;
+    padding-right: 10px;
+    text-align: center;
+    width: 30px;
+  }
+
+  span.label {
+    float: right;
+  }
+}
+
 @media (min-width: $screen-sm-min) {
   .navbar {
     border-radius: 0;

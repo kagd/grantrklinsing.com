@@ -26,9 +26,9 @@ activate :blog do |blog|
   blog.calendar_template = "calendar.html"
 
   # Enable pagination
-  # blog.paginate = true
-  # blog.per_page = 10
-  # blog.page_link = "page/{num}"
+  blog.paginate = true
+  blog.per_page = 10
+  blog.page_link = "page/{num}"
 end
 
 # activate :spellcheck
@@ -99,15 +99,30 @@ helpers do
   end
 
   def article_image(article)
-    begin
-      image_name = "#{ article.metadata[:page]['tags'].split(',')[0] }.svg"
-      unless File.exist? File.expand_path("source/images/#{ image_name }")
-        image_name = 'logo.svg'
-      end
-    rescue
+    tag = article.metadata[:page]['tags'].split(',')[0]
+    tag_image tag
+  end
+
+  def tag_image(tag)
+    image_name = "#{ tag }.svg"
+    unless File.exist? File.expand_path("source/images/#{ image_name }")
       image_name = 'logo.svg'
     end
     image_tag image_name
+  end
+
+  def tag_link_from_article(article, &block)
+    first_tag = article.metadata[:page]['tags'].split(',')[0]
+
+    link_to capture(&block), tag_path(first_tag)
+  end
+
+  def tag_path(tag)
+    "/articles/tags/#{tag}.html"
+  end
+
+  def tag_link(tag, &block)
+    link_to capture(&block), tag_path(tag)
   end
 
   def article_downloads(article, link_class=nil)
@@ -122,6 +137,12 @@ helpers do
       text, link = *demo.split('|').map{|item| item.strip }
       link_to text, "/demos/#{link}", class: link_class, target: '_blank'
     end.join(' ')
+  end
+
+  def tag_counts
+    blog.tags.map do |tag, articles|
+      [tag, articles.size]
+    end.sort{|a, b| a.last <=> b.last  }.reverse.take_while{|tag| tag.last > 1 }
   end
 end
 

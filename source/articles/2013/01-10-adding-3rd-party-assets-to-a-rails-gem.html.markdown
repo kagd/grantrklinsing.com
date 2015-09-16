@@ -1,7 +1,7 @@
 ---
 title: Adding 3rd Party Assets to a Rails Gem
 date: 2013-01-10 04:54 UTC
-tags: ruby, rails, Javascript, css
+tags: ruby, rails, javascript, css
 ---
 
 I recently began creating a ruby gem that served up my frequently used Javascript and CSS snippets ([utility_box](https://github.com/digitalopera/utility_box)).
