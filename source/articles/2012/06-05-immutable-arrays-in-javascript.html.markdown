@@ -1,6 +1,6 @@
 ---
 title: Immutable Arrays in Javascript
-date: 2012-06-05 05:33 UTC
+date: 2012-06-05 05:33 MDT
 tags: javascript
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Moving from .NET to Ruby... Twice
-date: 2012-10-10 05:40 UTC
+date: 2012-10-10 05:40 MDT
 tags: ruby, .net, startup
 ---
 

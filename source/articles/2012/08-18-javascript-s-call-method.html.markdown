@@ -1,6 +1,6 @@
 ---
 title: Javascript's Call Method
-date: 2012-08-18 05:36 UTC
+date: 2012-08-18 05:36 MDT
 tags: javascript
 ---
 

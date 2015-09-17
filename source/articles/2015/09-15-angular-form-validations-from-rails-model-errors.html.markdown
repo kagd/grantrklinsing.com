@@ -1,6 +1,6 @@
 ---
 title: Angular Form Validations from Rails Model Errors
-date: 2015-09-15 23:25 UTC
+date: 2015-09-15 23:25 MDT
 tags: angular, rails
 ---
 

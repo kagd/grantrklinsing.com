@@ -1,6 +1,6 @@
 ---
 title: Adding 3rd Party Assets to a Rails Gem
-date: 2013-01-10 04:54 UTC
+date: 2013-01-10 04:54 MDT
 tags: ruby, rails, javascript, css
 ---
 

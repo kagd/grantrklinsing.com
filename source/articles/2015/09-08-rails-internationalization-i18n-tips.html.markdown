@@ -1,6 +1,6 @@
 ---
 title: Rails Internationalization (I18n) Tips
-date: 2015-09-08 02:12 UTC
+date: 2015-09-08 02:12 MDT
 tags: rails, i18n
 ---
 

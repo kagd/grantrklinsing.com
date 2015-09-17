@@ -1,6 +1,6 @@
 ---
 title: UI Router Multiple Nested Child Views Example
-date: 2015-09-11 05:18 UTC
+date: 2015-09-11 05:18 MDT
 tags: angular, ui-router
 downloads: UI Router Example | 09-11-ui-router-multiple-nested-child-views-example.zip
 demos: UI Router Demo | 2015/09-11-ui-router-multiple-nested-child-views-demo.html

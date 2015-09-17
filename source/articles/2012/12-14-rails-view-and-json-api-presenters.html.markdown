@@ -1,6 +1,6 @@
 ---
 title: Rails View and JSON API Presenters
-date: 2012-12-14 05:45 UTC
+date: 2012-12-14 05:45 MDT
 tags: rails
 ---
 

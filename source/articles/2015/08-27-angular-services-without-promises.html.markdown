@@ -1,6 +1,6 @@
 ---
 title: Angular Services Without Promises
-date: 2015-08-27 03:02 UTC
+date: 2015-08-27 03:02 MDT
 tags: angular, scheming
 ---
 

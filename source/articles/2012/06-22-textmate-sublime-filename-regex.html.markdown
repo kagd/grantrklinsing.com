@@ -1,6 +1,6 @@
 ---
 title: TextMate & Sublime Filename Regex
-date: 2012-06-22 05:24 UTC
+date: 2012-06-22 05:24 MDT
 tags: textmate, sublime text
 ---
 

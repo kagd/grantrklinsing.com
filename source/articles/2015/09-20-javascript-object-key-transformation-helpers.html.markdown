@@ -1,6 +1,6 @@
 ---
 title: Javascript Object Key Transformation Helpers
-date: 2015-09-20 05:33 UTC
+date: 2015-09-20 05:33 MDT
 tags: javascript, angular
 published: false
 ---

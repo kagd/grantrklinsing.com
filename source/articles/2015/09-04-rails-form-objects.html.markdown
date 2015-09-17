@@ -1,6 +1,6 @@
 ---
 title: Rails Form Objects
-date: 2015-09-04 02:22 UTC
+date: 2015-09-04 02:22 MDT
 tags: rails
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Building and Installing MongoDB on Ubuntu 10.04
-date: 2012-01-05 05:01 UTC
+date: 2012-01-05 05:01 MDT
 tags: mongodb, ubuntu
 ---
 
