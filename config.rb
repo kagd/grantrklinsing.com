@@ -139,10 +139,22 @@ helpers do
     end.join(' ')
   end
 
+  def article_references(article, link_class=nil)
+    article.data.references.split(',').each_with_index.map do |reference, i|
+      link_to "Reference #{i + 1}", reference, class: link_class, target: '_blank'
+    end.join(' ')
+  end
+
   def tag_counts
     blog.tags.map do |tag, articles|
       [tag, articles.size]
     end.sort{|a, b| a.last <=> b.last  }.reverse.take_while{|tag| tag.last > 1 }
+  end
+
+  def any_article_links?(article)
+    %w(downloads demos references).any? do |data_item|
+      article.data.send(data_item).present?
+    end
   end
 end
 

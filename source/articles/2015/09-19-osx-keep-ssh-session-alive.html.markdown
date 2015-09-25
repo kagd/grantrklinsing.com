@@ -2,6 +2,7 @@
 title: OSX Keep SSH Session Alive
 date: 2015-09-19 22:43 MDT
 tags: ssh
+references: http://apple.stackexchange.com/questions/36690/how-can-i-prevent-an-ssh-session-from-hanging-in-os-x-terminal
 ---
 
 For keeping the connection alive, you can check in `/etc/ssh_config` the line where
@@ -12,5 +13,3 @@ that indicates that your computer is not trying to keep the connection alive
 the aforementioned packet. Try putting 120 or 240, if it is still killing your
 connection, you can go lower, maybe to 5, if with that number it doesn't happen,
 maybe it is your router who is dumping the connection to free memory.
-
-Reference: http://apple.stackexchange.com/questions/36690/how-can-i-prevent-an-ssh-session-from-hanging-in-os-x-terminal
