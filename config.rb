@@ -132,7 +132,7 @@ helpers do
     end.join(' ')
   end
 
-  def article_demos(article, link_class=nil)
+  def article_demos(article, link_class='nil')
     article.data.demos.split(',').map do |demo|
       text, link = *demo.split('|').map{|item| item.strip }
       link_to text, "/demos/#{link}", class: link_class, target: '_blank'
@@ -151,10 +151,12 @@ helpers do
     end.sort{|a, b| a.last <=> b.last  }.reverse.take_while{|tag| tag.last > 1 }
   end
 
-  def any_article_links?(article)
-    %w(downloads demos references).any? do |data_item|
-      article.data.send(data_item).present?
-    end
+  def article_links(article)
+    %w(downloads demos references).map do |data_item|
+      if article.data.send(data_item).present?
+        send("article_#{data_item}", article, 'btn btn-primary')
+      end
+    end.compact
   end
 end
 
