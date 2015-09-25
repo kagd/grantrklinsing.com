@@ -54,22 +54,13 @@ html(ng-app="kagd")
             .article-body
               = yield
 
-              - if any_article_links?(current_article)
+              - if article_links(current_article).any?
                 hr
-                .row
-                  - if current_article.data.downloads
-                    .col-sm-4
-                      h4 Article Downloads
-                      = article_downloads(current_article, 'btn btn-primary')
-                  - if current_article.data.demos
-                    .col-sm-4
-                      h4 Article Demos
-                      = article_demos(current_article, 'btn btn-primary')
-
-                  - if current_article.data.references
-                    .col-sm-4
-                      h4 Article References
-                      = article_references(current_article, 'btn btn-primary')
+                .article-links
+                  h4 Article Links
+                  div
+                    - article_links(current_article).each do |links|
+                      = links
 
               div#disqus_thread
               javascript:
