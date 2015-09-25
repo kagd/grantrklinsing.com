@@ -1,8 +1,7 @@
 ---
 title: Javascript Object Key Transformation Helpers
-date: 2015-09-20 05:33 MDT
+date: 2015-09-25 16:33 MDT
 tags: javascript, angular
-published: false
 ---
 
 There are multiple times when I get data back from the server that is snake_case
