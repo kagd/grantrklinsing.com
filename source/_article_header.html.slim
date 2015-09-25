@@ -19,3 +19,8 @@
       div
         strong> Article Demos:
         = article_demos(article)
+
+    -if article.data.references
+      div
+        strong> Article References:
+        = article_references(article)
