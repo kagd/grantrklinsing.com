@@ -1,16 +1,10 @@
 ---
 title: Deploying a Rails App on Digital Ocean with Nginx
-date: 2015-09-24 18:41 MDT
+date: 2015-09-30 18:41 MDT
 tags: nginx, rails
 published: false
 references: https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04, https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma, https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04  
-
 ---
-
-Article references:
-https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04
-https://www.digitalocean.com/community/tutorials/deploying-a-rails-app-on-ubuntu-14-04-with-capistrano-nginx-and-puma
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-14-04  
 
 # Create Droplet
 
