@@ -1,0 +1,3 @@
+middleman build
+middleman deploy
+cap production deploy
