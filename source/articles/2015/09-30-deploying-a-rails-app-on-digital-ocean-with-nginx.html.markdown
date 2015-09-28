@@ -47,7 +47,13 @@ curl -sSL https://get.rvm.io | bash -s stable
 
 # install postgres  
 
-sudo apt-get install postgresql postgresql-contrib
+sudo apt-get install postgresql postgresql-contrib liqpq-dev
+
+liqpq-dev contains the pg_config file. without it you will run into issues installing the pg gem
+
+setup your postgres user
+
+use reference
 
 
 # Step 1 — Installing Nginx
@@ -57,3 +63,5 @@ sudo apt-get update
 Then, install Nginx:
 
 sudo apt-get install curl git-core nginx -y
+
+# Capistrano

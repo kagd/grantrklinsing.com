@@ -1,128 +1,31 @@
-$max-width-height: 30px;
-
-body {
-  color: $gray-dark;
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 100;
+a:hover {
+  cursor: pointer;
 }
 
-h1 {
-  font-weight: 100;
+#main {
+  margin-top: $grid-gutter-width / 2;
 }
 
-a {
-  color: $brand-primary;
-  @include single-transition(color);
+.section-header {
+  border-bottom: 1px solid $gray-lighter;
+  margin: 0 (-$grid-gutter-width / 2) 5px;
+  padding-bottom: 3px;
+  padding-left: ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
 
-  &:hover,
-  &:focus {
-    text-decoration: none;
-  }
-}
-
-.article-list {
-  margin-bottom: $grid-gutter-width;
-}
-
-code {
-  background-color: fade-out($gray-lighter, 0.8);
-  color: #000;
-}
-
-.article-header {
-  position: relative;
-
-  h1 {
-    margin-bottom: 5px;
-  }
-
-  .date {
-    color: $gray-lighter;
-    font-size: $font-size-h5;
-    font-weight: 100;
-    margin-top: 0;
-
-    span + span {
-      color: $gray-light;
-    }
-  }
-
-  img {
-    left: -($grid-gutter-width / 2) - $max-width-height;
-    max-height: $max-width-height;
-    max-width: $max-width-height;
-    position: absolute;
-    top: 5px;
-  }
-}
-
-.article-body {
-  margin-top: $grid-gutter-width;
-}
-
-pre {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  word-wrap: inherit;
-
-  code.hljs {
-    border-radius: 4px;
-    padding: 8px 10px;
-    white-space: inherit;
-  }
-}
-
-#disqus_thread {
-  margin-top: $grid-gutter-width * 2;
-}
-
-.lang-yml {
-  background: #23241f;
-  border-radius: 4px;
-  color: #f8f8f2;
-  display: block;
-  overflow-x: auto;
-  padding: 8px 10px;
-  white-space: inherit;
-}
-
-hr {
-  border-color: lighten($gray-base, 95%);
-}
-
-.page-links {
-  margin: $grid-gutter-width 0;
-}
-
-.tags {
-  img {
-    height: 20px;
+  h1, h2, h3, h4, h5, h6 {
+    font-size: $font-size-h4;
+    margin: 0;
   }
 
   a {
-    display: block;
-    padding: 5px 0;
+    font-family: $font-family-museo;
+    font-weight: 500;
   }
-
-  span.img {
-    display: inline-block;
-    padding-right: 10px;
-    text-align: center;
-    width: 30px;
-  }
-
-  span.label {
-    float: right;
-  }
-}
-
-.article-links a {
-  margin: 0 5px 5px 0; 
 }
 
 @media (min-width: $screen-sm-min) {
-  .navbar {
-    border-radius: 0;
+  #main {
+    margin-top: $grid-gutter-width;
   }
 }

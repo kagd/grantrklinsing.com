@@ -2,7 +2,11 @@
 // https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
 
 $gray-base: #000;
-$gray-lighter: lighten($gray-base, 75%);
+$gray-darker: lighten($gray-base, 20%);
+$gray-dark: lighten($gray-base, 35%);
+$gray: lighten($gray-base, 50%);
+$gray-light: lighten($gray-base, 75%);
+$gray-lighter: lighten($gray-base, 90%);
 $brand-primary: #1189B6;
 $brand-secondary: #f29220;
 $link-color: $brand-primary;
@@ -15,6 +19,9 @@ $font-size-h3: ceil(($font-size-base * 1.29)); // ~18px
 $font-size-h4: ceil(($font-size-base * 1.14)); // ~16px
 $font-size-h5: $font-size-base;
 $font-size-h6: ceil(($font-size-base * 0.85)); // ~12px
+
+$font-family-museo: "museo-slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-bernina: "jaf-bernina-sans-condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Compass Transition Settings
 $default-transition-property : all;

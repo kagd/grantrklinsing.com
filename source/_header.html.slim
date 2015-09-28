@@ -1,0 +1,36 @@
+header
+  .container-fluid
+    .row
+      .col-sm-10.col-sm-offset-1
+        nav
+          = link_to '/', class: 'brand' do
+            = image_tag 'logo.svg', alt: 'Grant Klinsing'
+
+          ul
+            li.menu
+              a(ng-click="appCtrl.toggleMenu()")
+                span Menu
+                .bars
+                  .bar
+                  .bar
+                  .bar
+            li.articles
+              = link_to '/articles.html' do
+                = fa_icon('book')
+                span
+                  | / Articles
+            li.github
+              a(href="http://github.com/kagd" target="_blank")
+                = fa_icon('github')
+                span
+                  | / kagd
+            li.twitter
+              a(href="http://twitter.com/gklinsing" target="_blank")
+                = fa_icon('twitter')
+                span
+                  | / @gklinsing
+            li.stack-overflow
+              a(href="http://careers.stackoverflow.com/gklinsing" target="_blank")
+                = fa_icon('stack-overflow')
+                span
+                  | / gklinsing

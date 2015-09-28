@@ -1,6 +1,9 @@
 doctype html
 html(ng-app="kagd")
   head
+    script(src="https://use.typekit.net/ola6uac.js")
+    javascript:
+      try{Typekit.load({ async: true });}catch(e){}
     meta(charset="utf-8")
     meta(http-equiv='X-UA-Compatible' content='IE=edge;chrome=1')
     meta(content="width=device-width, initial-scale=1.0" name="viewport")
@@ -11,93 +14,16 @@ html(ng-app="kagd")
     = favicon_tag 'images/favicon.ico'
 
   body(class="#{ page_classes }" ng-class="{'menu-open': appCtrl.menuOpen}" ng-controller="ApplicationController as appCtrl")
-    ul.mobile-menu
-      li.github
-        a(href="http://github.com/kagd" target="_blank")
-          =fa_icon('github')
-          | kagd
-      li.twitter
-        a(href="http://twitter.com/gklinsing" target="_blank")
-          =fa_icon('twitter')
-          | @gklinsing
-      li.stack-overflow
-        a(href="http://careers.stackoverflow.com/gklinsing" target="_blank")
-          =fa_icon('stack-overflow')
-          | Stack Overflow
-    header
+    = partial 'header'
+
+    section#main(role="main")
       .container-fluid
         .row
-          .col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3.wrapper
-            nav
-              = link_to '/', class: 'brand' do
-                = image_tag 'logo.svg'
-                .brand-name
-                  span> Grant
-                  span< Klinsing
+          .col-sm-10.col-sm-offset-1
+            - if current_article
+              = partial 'single_article', locals: {current_article: current_article}
 
-              ul
-                li.menu.visible-xs-inline-block
-                  a(href="#" ng-click="appCtrl.toggleMenu()")= fa_icon('bars')
-                li.github.hidden-xs
-                  a(href="http://github.com/kagd" target="_blank")= fa_icon('github')
-                li.twitter.hidden-xs
-                  a(href="http://twitter.com/gklinsing" target="_blank")= fa_icon('twitter')
-                li.stack-overflow.hidden-xs
-                  a(href="http://careers.stackoverflow.com/gklinsing" target="_blank")= fa_icon('stack-overflow')
-                  / = image_tag 'https://s.gravatar.com/avatar/0074a6a87ea8d82d6e4cd840226db943?s=50'
-
-    .container-fluid
-      section#main.row(role="main")
-        .col-sm-7.col-sm-offset-3.col-md-6
-          - if current_article
-            = partial 'article_header', locals: {article: current_article, is_single_article: true}
-            .article-body
+            - else
               = yield
 
-              - if article_links(current_article).any?
-                hr
-                .article-links
-                  h4 Article Links
-                  div
-                    - article_links(current_article).each do |links|
-                      = links
-
-              div#disqus_thread
-              javascript:
-                /* * * CONFIGURATION VARIABLES * * */
-                var disqus_shortname = 'kagdgithubio';
-                var disqus_identifier = '#{ current_article.slug }';
-                var disqus_title = '#{ current_article.title }';
-                /* * * DON'T EDIT BELOW THIS LINE * * */
-                (function() {
-                  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                })();
-              noscript Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
-
-          - else
-            = yield
-
-        .col-md-3.col-lg-2.hidden-xs.hidden-sm
-          aside
-            h3 Top Tags
-            ul.list-unstyled.tags
-              - tag_counts.each do |tag|
-                li
-                  = tag_link tag.first do
-                    span.img= tag_image(tag.first)
-                    = tag.first
-                    span.label.label-default<> #{tag.last} Articles
-
-    = javascript_include_tag('application', '//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js')
-    javascript:
-      hljs.initHighlightingOnLoad();
-
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-67203020-1', 'auto');
-      ga('send', 'pageview');
+    = partial 'scripts'

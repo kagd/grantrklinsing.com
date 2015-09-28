@@ -1,99 +1,98 @@
+$height: 40px;
+
 header {
-  background-image: url('/images/cityscape.jpg');
-  background-position: center center;
-  background-size: cover;
-
-  .container-fluid {
-    background-color: fade-out(#fff, 0.1);
-  }
-
-  nav {
-    height: 200px;
-    position: relative;
-  }
+  background-color: #000;
 
   .brand {
-    display: inline-block;
+    display: block;
+    float: left;
+    line-height: inherit;
+    padding: ($grid-gutter-width / 2) 0;
 
     img {
-      height: 50px;
-      vertical-align: top;
+      height: $height;
+      width: $height;
     }
-
-    span {
-      display: block;
-    }
-  }
-
-  .brand-name {
-    color: $gray-dark;
-    display: inline-block;
-    font-weight: 300;
-    padding: 5px 0 0 8px;
-    text-transform: lowercase;
   }
 
   ul {
-    background-color: $brand-primary;
+    float: right;
     list-style: none;
-    margin: 0 (-$grid-gutter-width / 2) 0 0;
-    padding: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-
-    a {
-      color: darken(#fff, 10%);
-      display: block;
-      font-size: $font-size-h1;
-      padding: 8px 15px;
-
-      &:hover {
-        color: #fff;
-      }
-    }
-
-    li.twitter a{
-      padding-bottom: 0;
-      padding-top: 0;
-    }
-  }
-
-  .menu {
-    display: none;
-  }
-}
-
-.articles header {
-  nav {
-    height: 100px;
+    margin: 0;
+    padding: 0 ($grid-gutter-width / 2);
   }
 
   li {
+    display: none;
+
+    &.menu {
+      display: inline-block;
+      text-transform: uppercase;
+
+      span {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  a {
+    color: #fff;
+    display: block;
+    font-size: $font-size-h4;
+    font-weight: 100;
+    line-height: $height;
+    padding: ($grid-gutter-width / 2) 0;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .fa {
+    font-size: $font-size-h1;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  .bars {
     display: inline-block;
+    margin-left: ($grid-gutter-width / 2);
+    vertical-align: middle;
+    width: 25px;
   }
-}
 
-@media (min-width: $screen-sm-min) {
-  header {
-    .container-fluid {
-      background-color: transparent;
+  .bar {
+    background-color: #fff;
+    height: 2px;
+    margin-top: 8px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .brand {
+      padding: 8px 0;
     }
 
-    nav {
-      background-color: fade-out(#fff, 0.1);
+    a {
+      padding: 6px 0 8px;
+    }
+
+    li {
+      display: inline-block;
       padding: 0 ($grid-gutter-width / 2);
-    }
 
-    ul {
-      margin-right: ($grid-gutter-width / 2);
-    }
-  }
+      &.menu {
+        display: none;
+      }
 
-  .articles header {
-    ul {
-      bottom: 0;
-      top: auto;
+      span {
+        vertical-align: middle;
+      }
     }
   }
 }

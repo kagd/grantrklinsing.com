@@ -1,21 +1,37 @@
----
-pageable: true
-per_page: 10
----
+.row
+  .col-sm-10.col-sm-offset-1
+    .row
+      .col-sm-6
+        section
+          h1 Grant R. Klinsing
 
-- if paginate && num_pages > 1
-  / p Page #{ page_number } of #{ num_pages }
+          p
+            |
+              We visit and interact with sites all over the net. Most of which track your
+              every move. I decided to condense my web presence into one site along with some ramblings.
 
-  - if prev_page
-    .page-links
-      p= link_to "#{fa_icon('arrow-left')} Previous page", prev_page
+        section.articles-list
+          .section-header.clearfix
+            h2.pull-left Articles
+            .pull-right= link_to 'View All', '/articles.html'
 
-- page_articles.each_with_index do |article, i|
-  article.article-list
-    = partial 'article_header', locals: {article: article, is_single_article: false}
-    .article-summary
-      = article.summary
+          - blog.articles[0...3].each do |article|
+            article
+              = link_to article do
+                .title= article.title
+                .date
+                  span<>= article.date.strftime('%Y /')
+                  span<>= article.date.strftime('%B %d')
 
-- if paginate
-  - if next_page
-    p= link_to "Next page #{fa_icon('arrow-right')}", next_page
+      .col-sm-6
+        section.diablo
+          h2= link_to '#kagd-1920', 'http://us.battle.net/d3/en/profile/kagd-1920/', target: '_blank'
+          p last seen online about 1 day ago
+
+          .paragon
+            .level 190
+            span paragon
+
+          .heroes
+            .hero.barbarian-male
+              span.name Balrog
