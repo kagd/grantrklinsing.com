@@ -5,7 +5,6 @@ source 'http://rubygems.org'
 gem "middleman",          "~> 3.4.0"
 gem "middleman-blog",     "~> 3.5.3"
 gem 'slim',               '~> 3.0.6'
-gem "bootstrap-sass",     '~> 3.3.5.1', require: false
 gem 'redcarpet',          '~> 3.3.2'
 gem "middleman-syntax",   '~> 2.0.0'
 gem 'middleman-deploy',   '~> 1.0'
@@ -19,5 +18,5 @@ gem "builder",            "~> 3.0"
 gem 'capistrano',         '~> 3.4.0'
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-angular', '~> 1.4.5'
+  gem 'rails-assets-angular',         '~> 1.4.5'
 end

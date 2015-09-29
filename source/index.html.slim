@@ -1,37 +1,41 @@
-.row
-  .col-sm-10.col-sm-offset-1
-    .row
-      .col-sm-6
-        section
-          h1 Grant R. Klinsing
+.grid-block.vertical.medium-horizontal
+  .grid-block.small-12.large-7.xlarge-8
+    .grid-content
+      section.introduction-pane
+        h1 Grant R. Klinsing
 
-          p
-            |
-              We visit and interact with sites all over the net. Most of which track your
-              every move. I decided to condense my web presence into one site along with some ramblings.
+        p
+          |
+            We visit and interact with sites all over the net. Most of which track your
+            every move. I decided to condense my web presence into one site along with some ramblings.
 
-        section.articles-list
-          .section-header.clearfix
-            h2.pull-left Articles
-            .pull-right= link_to 'View All', '/articles.html'
+      section.articles-list-pane
+        .section-header.clearfix
+          h2.pull-left Articles
+          .pull-right= link_to 'View All', '/articles.html'
 
-          - blog.articles[0...3].each do |article|
-            article
-              = link_to article do
-                .title= article.title
-                .date
-                  span<>= article.date.strftime('%Y /')
-                  span<>= article.date.strftime('%B %d')
+        - blog.articles[0...3].each do |article|
+          article
+            = link_to article do
+              .title= article.title
+              .date
+                span<>= article.date.strftime('%Y /')
+                span<>= article.date.strftime('%B %d')
 
-      .col-sm-6
-        section.diablo
-          h2= link_to '#kagd-1920', 'http://us.battle.net/d3/en/profile/kagd-1920/', target: '_blank'
-          p last seen online about 1 day ago
+  .grid-block.small-12.large-5.xlarge-4.vertical
+    section.grid-block.diablo-pane.shrink
+      .grid-content
+        h2= link_to '#kagd-1920', 'http://us.battle.net/d3/en/profile/kagd-1920/', target: '_blank'
+        p last seen online about 1 day ago
 
-          .paragon
-            .level 190
-            span paragon
+        .paragon
+          .level 190
+          span paragon
 
-          .heroes
-            .hero.barbarian-male
-              span.name Balrog
+        .heroes
+          .hero.barbarian-male
+            span.name Balrog
+
+    section.grid-block.github-pane
+      .grid-content
+        h2 github

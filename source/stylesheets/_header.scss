@@ -1,13 +1,10 @@
 $height: 40px;
 
-header {
-  background-color: #000;
+.title-bar {
+  width: 100%;
 
   .brand {
     display: block;
-    float: left;
-    line-height: inherit;
-    padding: ($grid-gutter-width / 2) 0;
 
     img {
       height: $height;
@@ -19,7 +16,7 @@ header {
     float: right;
     list-style: none;
     margin: 0;
-    padding: 0 ($grid-gutter-width / 2);
+    padding: 0;
   }
 
   li {
@@ -41,12 +38,10 @@ header {
     font-size: $font-size-h4;
     font-weight: 100;
     line-height: $height;
-    padding: ($grid-gutter-width / 2) 0;
 
     &:hover,
     &:focus {
       color: #fff;
-      text-decoration: none;
     }
   }
 
@@ -74,14 +69,6 @@ header {
   }
 
   @media (min-width: $screen-sm-min) {
-    .brand {
-      padding: 8px 0;
-    }
-
-    a {
-      padding: 6px 0 8px;
-    }
-
     li {
       display: inline-block;
       padding: 0 ($grid-gutter-width / 2);

@@ -1,31 +1,23 @@
-a:hover {
-  cursor: pointer;
-}
+@import "compass/utilities/general/clearfix";
 
-#main {
-  margin-top: $grid-gutter-width / 2;
-}
+a {
+  color: $link-color;
+  text-decoration: none;
 
-.section-header {
-  border-bottom: 1px solid $gray-lighter;
-  margin: 0 (-$grid-gutter-width / 2) 5px;
-  padding-bottom: 3px;
-  padding-left: ($grid-gutter-width / 2);
-  padding-right: ($grid-gutter-width / 2);
-
-  h1, h2, h3, h4, h5, h6 {
-    font-size: $font-size-h4;
-    margin: 0;
-  }
-
-  a {
-    font-family: $font-family-museo;
-    font-weight: 500;
+  &:hover {
+    color: $link-color-hover;
+    cursor: pointer;
   }
 }
 
+.clearfix {
+  @include clearfix();
+}
+
+.container-fluid {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 @media (min-width: $screen-sm-min) {
-  #main {
-    margin-top: $grid-gutter-width;
-  }
+
 }

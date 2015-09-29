@@ -1,15 +1,16 @@
 .index {
 
-  .articles-list {
-    margin-top: $grid-gutter-width;
+  .articles-list-pane {
+    margin-top: 3rem;
 
     article {
-      margin-bottom: $grid-gutter-width / 2;
+      margin-bottom: 1.5rem;
     }
 
     .title {
       font-family: $font-family-museo;
       font-size: $font-size-h4;
+      margin-bottom: 0.25rem;
     }
 
     .date span:first-child {
@@ -29,17 +30,44 @@
     }
   }
 
-  .diablo {
-    background-color: $gray-dark;
-    margin-left: (-$grid-gutter-width / 2);
-    margin-right: (-$grid-gutter-width / 2);
-    padding: $grid-gutter-width / 2;
-    position: relative;
+  .section-header {
+    border-bottom: 1px solid $gray-lighter;
+    margin: 0 (-$grid-gutter-width / 2) 1rem;
+    padding-bottom: 3px;
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+
+    h1, h2, h3, h4, h5, h6 {
+      font-size: $font-size-h4;
+      margin: 0;
+    }
+
+    a {
+      font-family: $font-family-museo;
+      font-weight: 500;
+    }
+  }
+
+  .introduction-pane {
+    margin-top: 2rem;
+  }
+
+  .diablo-pane {
+    background: $gray url('/images/icon_diablo.svg') no-repeat 1.75rem 0.75rem;
+    background-size: 50px 50px;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 1rem;
+
+    .grid-content {
+      position: relative;
+    }
 
     h2 {
       font-family: $font-family-bernina;
       font-size: $font-size-h1;
-      margin: 0;
+      line-height: 1;
+      margin: 0 0 0 50px;
     }
 
     a {
@@ -50,14 +78,19 @@
     p {
       color: $gray-lighter;
       font-size: $font-size-h6;
+      margin: 0 0 0 50px;
     }
+  }
+
+  .github-pane {
+    background-color: $gray-darker;
   }
 
   .paragon {
     color: $gray-lighter;
-    right: $grid-gutter-width / 2;
+    right: 1rem;
     position: absolute;
-    top: $grid-gutter-width / 2;
+    top: 0;
 
     .level {
       font-size: 52px;
@@ -78,7 +111,7 @@
   }
 
   .heroes {
-    margin-top: $grid-gutter-width / 2;
+    margin-top: 2rem;
 
     .hero {
       background: url(http://us.battle.net/d3/static/images/profile/hero/hero-nav-portraits.jpg) no-repeat;
