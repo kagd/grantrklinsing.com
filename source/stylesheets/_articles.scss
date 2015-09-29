@@ -1,0 +1,13 @@
+.articles {
+  .tag {
+    display: block;
+    left: -(25px + 16px);
+    position: absolute;
+    top: 0;
+    width: 25px;
+  }
+
+  article {
+    position: relative;
+  }
+}

@@ -9,7 +9,7 @@
 
     .title {
       font-family: $font-family-museo;
-      font-size: $font-size-h4;
+      font-size: $h4-font-size;
       margin-bottom: 0.25rem;
     }
 
@@ -38,7 +38,7 @@
     padding-right: ($grid-gutter-width / 2);
 
     h1, h2, h3, h4, h5, h6 {
-      font-size: $font-size-h4;
+      font-size: $h4-font-size;
       margin: 0;
     }
 
@@ -65,19 +65,19 @@
 
     h2 {
       font-family: $font-family-bernina;
-      font-size: $font-size-h1;
+      font-size: $h1-font-size;
       line-height: 1;
       margin: 0 0 0 50px;
     }
 
     a {
-      color: #62aadb;
+      color: lighten($link-color, 30%);
       font-weight: 300;
     }
 
     p {
       color: $gray-lighter;
-      font-size: $font-size-h6;
+      font-size: $h6-font-size;
       margin: 0 0 0 50px;
     }
   }
@@ -101,7 +101,7 @@
 
     span {
       display: block;
-      font-size: $font-size-h6;
+      font-size: $h6-font-size;
       right: 0;
       position: absolute;
       transform-origin: 89% 36%;
