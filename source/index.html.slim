@@ -12,9 +12,9 @@
       section.articles-list-pane
         .section-header.clearfix
           h2.pull-left Articles
-          .pull-right= link_to 'View All', '/articles.html'
+          .pull-right= link_to 'View All', '/posts.html'
 
-        - blog.articles[0...3].each do |article|
+        - blog.articles[0...5].each do |article|
           article
             = link_to article do
               .title= article.title
@@ -23,19 +23,32 @@
                 span<>= article.date.strftime('%B %d')
 
   .grid-block.small-12.large-5.xlarge-4.vertical
-    section.grid-block.diablo-pane.shrink
+    section.grid-block.diablo-pane.shrink(ng-controller="DiabloController as diabloCtrl")
       .grid-content
-        h2= link_to '#kagd-1920', 'http://us.battle.net/d3/en/profile/kagd-1920/', target: '_blank'
-        p last seen online about 1 day ago
+        .pane-header
+          h2= link_to '#kagd-1920', 'http://us.battle.net/d3/en/profile/kagd-1920/', target: '_blank'
+          p last seen online {{ diabloCtrl.profile.lastPlayedAt }}
 
-        .paragon
-          .level 190
-          span paragon
+          .paragon
+            .level {{ diabloCtrl.profile.paragonLevel }}
+            span paragon
 
-        .heroes
-          .hero.barbarian-male
-            span.name Balrog
+        .heroes.ng-cloak
+          .heroes-wrapper#heroes-wrapper
+            .hero(ng-repeat="hero in diabloCtrl.heroes" ng-class="diabloCtrl.heroClasses(hero)")
+              span.name {{ hero.name }}
 
-    section.grid-block.github-pane
-      .grid-content
-        h2 github
+    section.grid-block.github-pane(ng-controller="GithubController as githubCtrl")
+      .grid-content.ng-cloak(ng-if="githubCtrl.stats")
+        .pane-header
+          i=fa_icon 'github-square'
+          h2 {{ githubCtrl.stats.numberOfCommits }} Commits
+          p to this site
+
+        .last-commit
+          span.sha
+            a(ng-href="https://github.com/{{ githubCtrl.stats.lastCommit.repo }}/commit/{{ githubCtrl.stats.lastCommit.sha }}" target="_blank") \#{{ githubCtrl.shortSha(githubCtrl.stats.lastCommit.sha) }}
+
+          span.commit-date last commit {{ githubCtrl.stats.lastCommit.timeAgo }}
+
+          blockquote "{{ githubCtrl.stats.lastCommit.message }}"

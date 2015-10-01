@@ -1,25 +1,52 @@
-= partial 'article_header', locals: {article: current_article, is_single_article: true}
-.article-body
-  = yield
+.grid-block.align-center
+  .grid-content.large-8.article-content
+    .article-header
+      = tag_link_from_article current_article do
+        = article_image(current_article)
 
-  - if article_links(current_article).any?
-    hr
-    .article-links
-      h4 Article Links
-      div
-        - article_links(current_article).each do |links|
-          = links
+      h1= current_article.title
+      .date
+        span<>= current_article.date.strftime('%Y /')
+        span<>= current_article.date.strftime('%B %d')
 
-  div#disqus_thread
-  javascript:
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'kagdgithubio';
-    var disqus_identifier = '#{ current_article.slug }';
-    var disqus_title = '#{ current_article.title }';
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  noscript Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+      -if current_article.data.downloads || current_article.data.demos
+        hr
+      -if current_article.data.downloads
+        div
+          strong> Article Downloads:
+          = article_downloads(current_article)
+
+      -if current_article.data.demos
+        div
+          strong> Article Demos:
+          = article_demos(current_article)
+
+      -if current_article.data.references
+        div
+          strong> Article References:
+          = article_references(current_article)
+
+    .article-body
+      = current_article.body
+
+      - if article_links(current_article).any?
+        hr
+        .article-links
+          h4 Article Links
+          div
+            - article_links(current_article).each do |links|
+              = links
+
+      div#disqus_thread
+      javascript:
+        /* * * CONFIGURATION VARIABLES * * */
+        var disqus_shortname = 'kagdgithubio';
+        var disqus_identifier = '#{ current_article.slug }';
+        var disqus_title = '#{ current_article.title }';
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      noscript Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>

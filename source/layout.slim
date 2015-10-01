@@ -9,8 +9,9 @@ html(ng-app="kagd")
     meta(content="width=device-width, initial-scale=1.0" name="viewport")
     title Grant R. Klinsing #{ " - #{ current_article.title }" unless current_article.nil? }
     = feed_tag(:atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed")
-    = stylesheet_link_tag 'vendor', 'application', 'syntax_highlighter/monokai'
+    = stylesheet_link_tag 'application', 'syntax_highlighter/monokai'
     = favicon_tag 'images/favicon.ico'
+    = javascript_include_tag('vendor')
 
   body(class="#{ page_classes }" ng-class="{'menu-open': appCtrl.menuOpen}" ng-controller="ApplicationController as appCtrl")
     .grid-frame

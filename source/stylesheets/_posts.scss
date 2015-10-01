@@ -1,0 +1,140 @@
+.posts {
+  .tag {
+    display: block;
+    left: -(25px + 14px);
+    position: absolute;
+    top: 0;
+    width: 25px;
+  }
+
+  article {
+    margin-bottom: 2rem;
+    position: relative;
+  }
+
+  .article-header {
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: $h3-font-size;
+    line-height: 1;
+    margin: 0 0 0.5rem;
+  }
+
+  .articles-list-pane {
+    margin-top: 2rem;
+  }
+
+  .section-header {
+    border-bottom: 1px solid $gray-lighter;
+    margin: 0 0 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+
+    h1 {
+      line-height: 1;
+      margin: 0;
+    }
+  }
+
+  .page-links {
+    color: $gray-light;
+    margin: 0 -3rem 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    p {
+      margin: 0;
+    }
+
+    &.bottom {
+      border-top: 1px solid $gray-lighter;
+      padding-top: 1rem;
+    }
+
+    &.top {
+      border-bottom: 1px solid $gray-lighter;
+      padding-bottom: 1rem;
+    }
+  }
+
+  #tags {
+    bottom: 1rem;
+    color: $link-color;
+    cursor: pointer;
+    font-family: $font-family-bernina;
+    font-size: $h3-font-size;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 5px 0 0 0;
+    position: absolute;
+    right: 0;
+
+    .fa {
+      display: none;
+      margin-left: 0.5rem;
+    }
+
+    ul {
+      li:first-child a {
+        border-top: none;
+      }
+
+      a {
+        text-align: left;
+
+        &:hover .tag-count {
+          background-color: darken($gray-lighter, 5%);
+        }
+      }
+
+      img {
+        height: 20px;
+        margin-right: 0.75rem;
+        vertical-align: middle;
+      }
+
+      .tag-count {
+        float: right;
+      }
+    }
+  }
+
+  @include breakpoint(medium) {
+    .articles-list-pane {
+      overflow: visible;
+    }
+
+    .section-header {
+      margin: 0 -3rem 1rem;
+
+      h1 {
+        margin: 0 0 0 3rem;
+      }
+    }
+
+    #tags {
+      margin-right: 3rem;
+
+      .fa {
+        display: inline-block;
+      }
+    }
+
+    .action-sheet {
+      width: 200px;
+      @include transform(translateX(-50%) translateY(115%));
+
+      &.is-active {
+        @include transform(translateX(-50%) translateY(105%));
+      }
+    }
+  }
+
+  @include breakpoint(large) {
+    #tags {
+      line-height: 1.4;
+    }
+  }
+}

@@ -38,6 +38,7 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
+    dotenv (1.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
@@ -85,6 +86,9 @@ GEM
       middleman-core (>= 3.2)
       net-sftp
       ptools
+    middleman-dotenv (1.1.1)
+      dotenv (~> 1.0)
+      middleman-core (>= 3.2)
     middleman-sprockets (3.4.2)
       middleman-core (>= 3.3)
       sprockets (~> 2.12.1)
@@ -163,6 +167,7 @@ DEPENDENCIES
   middleman (~> 3.4.0)
   middleman-blog (~> 3.5.3)
   middleman-deploy (~> 1.0)
+  middleman-dotenv (~> 1.0)
   middleman-syntax (~> 2.0.0)
   rails-assets-angular (~> 1.4.5)!
   redcarpet (~> 3.3.2)

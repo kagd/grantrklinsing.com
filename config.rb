@@ -44,7 +44,13 @@ end
 
 page "/feed.xml", layout: false
 
+# add the foundation js/css to the sprockets path
 sprockets.append_path File.join root, 'node_modules', 'foundation-apps', 'dist', 'css'
+sprockets.append_path File.join root, 'node_modules', 'foundation-apps', 'dist', 'js'
+sprockets.append_path File.join root, 'node_modules', 'perfect-scrollbar', 'dist', 'css'
+sprockets.append_path File.join root, 'node_modules', 'perfect-scrollbar', 'dist', 'js', 'min'
+sprockets.append_path File.join root, 'node_modules', 'angular-perfect-scrollbar', 'src'
+
 ###
 # Compass
 ###
@@ -74,6 +80,11 @@ sprockets.append_path File.join root, 'node_modules', 'foundation-apps', 'dist',
 # Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
+
+
+# don't allow attributes to be defined within curly braces
+# Mainly setup to deal with angular template interpolation
+Slim::Engine.set_options({attr_list_delims: {'(' => ')', '[' => ']'}})
 
 ###
 # Helpers
@@ -159,6 +170,18 @@ helpers do
       end
     end.compact
   end
+
+  def link_to_if(condition, name, options = {}, html_options = {}, &block)
+    if condition
+      link_to(name, options, html_options)
+    else
+      if block_given?
+        block.arity <= 1 ? capture(name, &block) : capture(name, options, html_options, &block)
+      else
+        name.html_safe
+      end
+    end
+  end
 end
 
 set :css_dir, 'stylesheets'
@@ -183,4 +206,11 @@ configure :build do
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
+
+  # activate :dotenv, env: '.env.build'
+end
+
+# Specify environment specific .env files
+configure :development do
+  activate :dotenv, env: '.env.development'
 end

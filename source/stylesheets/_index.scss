@@ -1,139 +1,23 @@
+@import 'index/articles_list';
+@import 'index/diablo';
+@import 'index/github';
+
 .index {
-
-  .articles-list-pane {
-    margin-top: 3rem;
-
-    article {
-      margin-bottom: 1.5rem;
-    }
-
-    .title {
-      font-family: $font-family-museo;
-      font-size: $h4-font-size;
-      margin-bottom: 0.25rem;
-    }
-
-    .date span:first-child {
-      color: $gray-light;
-    }
-
-    .date span:last-child {
-      color: $gray;
-    }
-
-    a:hover {
-      text-decoration: none;
-
-      .title {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  .section-header {
-    border-bottom: 1px solid $gray-lighter;
-    margin: 0 (-$grid-gutter-width / 2) 1rem;
-    padding-bottom: 3px;
-    padding-left: ($grid-gutter-width / 2);
-    padding-right: ($grid-gutter-width / 2);
-
-    h1, h2, h3, h4, h5, h6 {
-      font-size: $h4-font-size;
-      margin: 0;
-    }
-
-    a {
-      font-family: $font-family-museo;
-      font-weight: 500;
-    }
-  }
-
   .introduction-pane {
     margin-top: 2rem;
   }
 
-  .diablo-pane {
-    background: $gray url('/images/icon_diablo.svg') no-repeat 1.75rem 0.75rem;
-    background-size: 50px 50px;
-    margin-left: -1rem;
-    margin-right: -1rem;
-    padding: 1rem;
-
-    .grid-content {
-      position: relative;
-    }
-
-    h2 {
-      font-family: $font-family-bernina;
-      font-size: $h1-font-size;
-      line-height: 1;
-      margin: 0 0 0 50px;
-    }
-
-    a {
-      color: lighten($link-color, 30%);
-      font-weight: 300;
-    }
-
-    p {
-      color: $gray-lighter;
-      font-size: $h6-font-size;
-      margin: 0 0 0 50px;
+  @include breakpoint(xlarge) {
+    .introduction-pane {
+      padding-left: 6rem;
+      padding-right: 6rem;
     }
   }
 
-  .github-pane {
-    background-color: $gray-darker;
-  }
-
-  .paragon {
-    color: $gray-lighter;
-    right: 1rem;
-    position: absolute;
-    top: 0;
-
-    .level {
-      font-size: 52px;
-      font-weight: 100;
-      line-height: 41px;
-      padding-right: 10px;
-    }
-
-    span {
-      display: block;
-      font-size: $h6-font-size;
-      right: 0;
-      position: absolute;
-      transform-origin: 89% 36%;
-      top: 0;
-      @include transform(rotate(-90deg));
-    }
-  }
-
-  .heroes {
-    margin-top: 2rem;
-
-    .hero {
-      background: url(http://us.battle.net/d3/static/images/profile/hero/hero-nav-portraits.jpg) no-repeat;
-      border-radius: 4px;
-      box-shadow: 1px 1px 2px rgba(0,0,0,0.25);
-      display: block;
-      padding-top: 65px;
-      width: 83px;
-    }
-
-    .name {
-      background-color: #000;
-      border-bottom-left-radius: 4px;
-      border-bottom-right-radius: 4px;
-      color: #fff;
-      display: block;
-      padding: 3px;
-      text-align: center;
-    }
-
-    .barbarian-male {
-      background-position: 0 0;
+  @include breakpoint(xxlarge) {
+    .introduction-pane {
+      padding-left: 9rem;
+      padding-right: 9rem;
     }
   }
 }

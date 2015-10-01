@@ -1,0 +1,5 @@
+- if paginate && num_pages > 1
+  .page-links(class="#{ link_class }")
+    = link_to_if prev_page, "#{fa_icon('arrow-left')} Previous page", prev_page
+    .pull-right
+      = link_to_if next_page, "Next page #{fa_icon('arrow-right')}", next_page

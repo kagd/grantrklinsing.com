@@ -34,42 +34,43 @@
 // 1. CSS Exports
 // - - - - - - - - - - - - - - -
 
-// Change any value in this map from "true" to "false" to disable that component's CSS class output. You'll still be able to use the component's mixins, but none of our pre-written classes will be in your CSS.
+// Change any value in this map from "true" to "false" to disable that component's CSS class output.
+// You'll still be able to use the component's mixins, but none of our pre-written classes will be in your CSS.
 
-// $include-css: (
-//   accordion: true,
-//   action-sheet: true,
-//   block-list: true,
-//   button: true,
-//   button-group: true,
-//   card: true,
-//   coloring: true,
-//   extras: true,
-//   forms: true,
-//   grid: true,
-//   iconic: true,
-//   label: true,
-//   badge: true,
-//   list: true,
-//   menu-bar: true,
-//   modal: true,
-//   motion: true,
-//   notification: true,
-//   off-canvas: true,
-//   panel: true,
-//   popup: true,
-//   switch: true,
-//   tabs: true,
-//   title-bar: true,
-//   typography: true,
-//   utilities: true,
-// );
+$include-css: (
+  accordion: false,
+  action-sheet: true,
+  block-list: false,
+  button: true,
+  button-group: true,
+  card: false,
+  coloring: true,
+  extras: true,
+  forms: true,
+  grid: true,
+  iconic: false,
+  label: false,
+  badge: true,
+  list: true,
+  menu-bar: false,
+  modal: false,
+  motion: true,
+  notification: false,
+  off-canvas: false,
+  panel: false,
+  popup: false,
+  switch: false,
+  tabs: false,
+  title-bar: true,
+  typography: true,
+  utilities: true,
+);
 
 // 2. Global Styles
 // - - - - - - - - - - - - - - -
 
 // This sets 1rem to be 16px
-// $rem-base: 16px;
+$rem-base: 14px;
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
@@ -77,7 +78,7 @@
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
-// $base-font-size: 100%;
+$base-font-size: 14px;
 
 // $base-line-height is 24px while $base-font-size is 16px
 // $base-line-height: 1.5;
@@ -154,8 +155,8 @@ $h5-font-size: rem-calc(14);
 $h6-font-size: rem-calc(12);
 
 // We use these to control header size reduction on small screens
-// $h1-font-reduction: rem-calc(10);
-// $h2-font-reduction: rem-calc(10);
+$h1-font-reduction: rem-calc(5);
+$h2-font-reduction: rem-calc(5);
 // $h3-font-reduction: rem-calc(5);
 // $h4-font-reduction: rem-calc(5);
 // $h5-font-reduction: 0;
@@ -634,23 +635,3 @@ $default-transition-property : all;
 $default-transition-duration : 250ms;
 $default-transition-function : ease-in-out;
 $default-transition-delay    : false;
-
-//== Grid system
-$grid-gutter-width:         30px;
-
-//== Media queries breakpoints
-// Extra small screen / phone
-$screen-xs:                  480px;
-$screen-xs-min:              $screen-xs;
-
-// Small screen / tablet
-$screen-sm:                  768px;
-$screen-sm-min:              $screen-sm;
-
-// Medium screen / desktop
-$screen-md:                  992px;
-$screen-md-min:              $screen-md;
-
-// Large screen / wide desktop
-$screen-lg:                  1200px;
-$screen-lg-min:              $screen-lg;

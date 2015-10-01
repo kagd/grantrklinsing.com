@@ -1,0 +1,40 @@
+---
+pageable: true
+per_page: 10
+---
+
+.grid-block.align-center
+  section.grid-content.articles-list-pane.medium-10.large-8.xlarge-6
+    .section-header.ng-cloak
+      h1 Articles
+
+      zf-action-sheet#tags
+        zf-as-button
+          | Tags
+          i=fa_icon('chevron-down')
+        zf-as-content(position="bottom")
+          ul
+            - tag_counts.each do |tag|
+              li
+                = tag_link tag.first do
+                  span.tag-image= tag_image(tag.first)
+                  span.tag-name= tag.first
+                  span.tag-count.badge.secondary(title="#{ tag.last } #{ tag.first } articles")= tag.last
+
+    = partial 'paginate', locals: {paginate: paginate, num_pages: num_pages, prev_page: prev_page, next_page: next_page, link_class: 'top'}
+
+    - page_articles.each_with_index do |article, i|
+      article
+        .article-header
+          = tag_link_from_article article do
+            = article_image(article)
+
+          h2= link_to article.title, article
+          .date
+            span<>= article.date.strftime('%Y /')
+            span<>= article.date.strftime('%B %d')
+
+        .article-summary
+          = article.summary
+
+    = partial 'paginate', locals: {paginate: paginate, num_pages: num_pages, prev_page: prev_page, next_page: next_page, link_class: 'bottom'}

@@ -1,0 +1,72 @@
+.index .github-pane {
+  background-color: $gray-darker;
+  color: $gray;
+
+  .grid-content {
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    position: relative;
+  }
+
+  a:hover {
+    color: $link-color;
+  }
+
+  .fa {
+    color: $gray;
+    font-size: 42px;
+    position: absolute;
+  }
+
+  h2 {
+    color: #fff;
+    font-family: $font-family-bernina;
+    font-size: 36px;
+    font-weight: 100;
+    line-height: 1;
+    margin: 0 0 0 50px;
+  }
+
+  p {
+    line-height: 1;
+    margin: 0 0 0 50px;
+  }
+
+  .pane-header {
+    border-bottom: 1px solid darken($gray-darker, 5%);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 0 1rem 1rem;
+  }
+
+  .last-commit {
+    border-top: 1px solid lighten($gray-darker, 5%);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 1rem;
+    position: relative;
+  }
+
+  .commit-date {
+    font-size: $h5-font-size;
+  }
+
+  .sha {
+    background-color: lighten($gray-darker, 5%);
+    border-bottom-left-radius: 4px;
+    right: 0;
+    padding: 5px 8px 6px;
+    position: absolute;
+    top: 0;
+  }
+
+  blockquote {
+    border-left: none;
+    color: $gray-lighter;
+    font-family: $font-family-bernina;
+    font-size: $h3-font-size;
+    font-style: italic;
+    margin: 0.5rem 0 0;
+    padding: 0;
+  }
+}

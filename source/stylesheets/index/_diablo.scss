@@ -1,0 +1,139 @@
+.index .diablo-pane {
+  background: lighten($gray-darker, 10%) url('/images/icon_diablo.svg') no-repeat 1.75rem 0.75rem;
+  background-size: 50px 50px;
+  border-bottom: 1px solid darken($gray-darker, 5%);
+  border-top: 1px solid darken($gray-darker, 5%);
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 1rem 1rem 0;
+
+  .grid-content {
+    position: relative;
+  }
+
+  .pane-header {
+    border-bottom: 1px solid lighten($gray-darker, 5%);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 0 1rem 1rem;
+  }
+
+  h2 {
+    font-family: $font-family-bernina;
+    font-size: $h1-font-size;
+    line-height: 1;
+    margin: 0 0 0 50px;
+  }
+
+  a {
+    color: lighten($link-color, 30%);
+    font-weight: 300;
+  }
+
+  p {
+    color: $gray-lighter;
+    font-size: $h6-font-size;
+    margin: 0 0 0 50px;
+  }
+
+  .paragon {
+    color: $gray-lighter;
+    font-family: $font-family-bernina;
+    right: 1rem;
+    position: absolute;
+    top: 0;
+
+    .level {
+      font-size: 52px;
+      font-weight: 100;
+      line-height: 41px;
+      padding-right: 10px;
+    }
+
+    span {
+      display: block;
+      font-size: $h6-font-size;
+      right: 0;
+      position: absolute;
+      transform-origin: 90% 45%;
+      top: 0;
+      @include transform(rotate(-90deg));
+    }
+  }
+
+  .heroes {
+    border-top: 1px solid lighten($gray-darker, 15%);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    // padding: 1rem 1rem 0;
+
+    .heroes-wrapper {
+      overflow: hidden;
+      padding: 1rem 0 1rem 1rem;
+      position: relative;
+      white-space: nowrap;
+      width: 100%;
+    }
+
+    .hero {
+      background: url(http://us.battle.net/d3/static/images/profile/hero/hero-nav-portraits.jpg) no-repeat;
+      border-radius: 4px;
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+      display: inline-block;
+      margin-right: 1rem;
+      padding-top: 65px;
+      width: 83px;
+    }
+
+    .name {
+      background-color: #000;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      color: #fff;
+      display: block;
+      padding: 3px;
+      text-align: center;
+    }
+
+    .barbarian-male {
+      background-position: 0 0;
+    }
+    .barbarian-female {
+      background-position: -83px 0;
+    }
+    .wizard-male {
+      background-position: -83px -264px;
+    }
+    .wizard-female {
+      background-position: -83px -264px;
+    }
+    .demon-hunter-male {
+      background-position: 0 -66px;
+    }
+    .demon-hunter-female {
+      background-position: -83px -66px;
+    }
+    .crusader-male {
+      background-position: 0 -330px;
+    }
+    .crusader-female {
+      background-position: -83px -330px;
+    }
+    .witch-doctor-male {
+      background-position: 0 -198px;
+    }
+    .witch-doctor-female {
+      background-position: -83px -198px;
+    }
+    .monk-male {
+      background-position: 0 -132px;
+    }
+    .monk-female {
+      background-position: -83px -132px;
+    }
+  }
+
+  @include breakpoint(large) {
+    border-top: none;
+  }
+}

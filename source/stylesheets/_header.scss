@@ -1,10 +1,17 @@
 $height: 40px;
 
 .title-bar {
+  font-family: $font-family-bernina;
   width: 100%;
+
+  &.dark {
+    border: none;
+    padding: 0;
+  }
 
   .brand {
     display: block;
+    margin: 1rem;
 
     img {
       height: $height;
@@ -16,11 +23,12 @@ $height: 40px;
     float: right;
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 1rem 0 0;
   }
 
   li {
     display: none;
+    padding: 0;
 
     &.menu {
       display: inline-block;
@@ -29,6 +37,29 @@ $height: 40px;
       span {
         vertical-align: middle;
       }
+    }
+
+    a {
+      border-bottom: 4px solid transparent;
+      border-top: 3px solid transparent;
+      padding: 1rem;
+      text-shadow: 0 0 0 rgba(255,255,255,0);
+      @include transition(all $default-transition-duration $default-transition-function);
+
+      &:hover,
+      &:focus {
+        border-bottom-color: $link-color;
+        // border-top-color: $link-color;
+        text-shadow: 0 0 2px rgba(255,255,255,1);
+        //
+        // i {
+        //   text-shadow: 0 0 2px $link-color;
+        // }
+      }
+
+      // i {
+      //   @include transition(all $default-transition-duration $default-transition-function);
+      // }
     }
   }
 
@@ -42,6 +73,7 @@ $height: 40px;
     &:hover,
     &:focus {
       color: #fff;
+      text-decoration: none;
     }
   }
 
@@ -53,7 +85,7 @@ $height: 40px;
 
   .bars {
     display: inline-block;
-    margin-left: ($grid-gutter-width / 2);
+    margin-left: 0.5rem;
     vertical-align: middle;
     width: 25px;
   }
@@ -68,10 +100,10 @@ $height: 40px;
     }
   }
 
-  @media (min-width: $screen-sm-min) {
+  @include breakpoint(medium) {
     li {
       display: inline-block;
-      padding: 0 ($grid-gutter-width / 2);
+      padding: 0;
 
       &.menu {
         display: none;

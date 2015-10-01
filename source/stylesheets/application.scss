@@ -1,11 +1,14 @@
+//= require ../../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar
 @import "compass/css3/transition";
 @import "compass/css3/transform";
 @import "compass/css3/filter";
 @import './settings';
+@import '../../node_modules/foundation-apps/scss/foundation';
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import './layout';
 @import './typeography';
 @import './header';
 @import './index';
-@import './articles';
+@import './posts';
+@import './post';

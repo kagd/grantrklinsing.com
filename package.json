@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "foundation-apps": "^1.1.0"
+    "angular-perfect-scrollbar": "0.0.5",
+    "foundation-apps": "^1.1.0",
+    "perfect-scrollbar": "^0.6.4"
   },
   "devDependencies": {},
   "scripts": {
