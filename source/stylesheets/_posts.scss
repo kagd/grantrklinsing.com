@@ -1,4 +1,5 @@
-.posts {
+.posts,
+.articles_tags {
   .tag {
     display: block;
     left: -(25px + 14px);
@@ -40,9 +41,9 @@
 
   .page-links {
     color: $gray-light;
-    margin: 0 -3rem 2rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    margin: 0 0 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
     p {
       margin: 0;
@@ -129,6 +130,12 @@
       &.is-active {
         @include transform(translateX(-50%) translateY(105%));
       }
+    }
+
+    .page-links {
+      margin: 0 -3rem 2rem;
+      padding-left: 3rem;
+      padding-right: 3rem;
     }
   }
 

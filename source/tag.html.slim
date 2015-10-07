@@ -1,32 +1,39 @@
 ---
 pageable: true
-per_page: 12
+per_page: 10
 ---
-h2 Articles tagged '#{ tagname }'
+.grid-block.align-center
+  section.grid-content.articles-list-pane.medium-10.large-8.xlarge-6
+    .section-header.ng-cloak
+      h1 Articles tagged '#{ tagname }'
 
--if paginate && num_pages > 1
-  p Page #{ page_number } of #{ num_pages }
+      zf-action-sheet#tags
+        zf-as-button
+          | Tags
+          i=fa_icon('chevron-down')
+        zf-as-content(position="bottom")
+          ul
+            - tag_counts.each do |tag|
+              li
+                = tag_link tag.first do
+                  span.tag-image= tag_image(tag.first)
+                  span.tag-name= tag.first
+                  span.tag-count.badge.secondary(title="#{ tag.last } #{ tag.first } articles")= tag.last
 
-  - if prev_page
-    p= link_to 'Previous page', prev_page
+    = partial 'paginate', locals: {paginate: paginate, num_pages: num_pages, prev_page: prev_page, next_page: next_page, link_class: 'top'}
 
-ul.list-unstyled
-  - page_articles.each_with_index do |article, i|
-    / li
-    /   = link_to article.title, article
-    /   span= article.date.strftime('%b %e')
-    li
-      .article-header
-        = tag_link article do
-          = article_image(article)
+    - page_articles.each_with_index do |article, i|
+      article
+        .article-header
+          = tag_link_from_article article do
+            = article_image(article)
 
-        h1= link_to article.title, article
-        h2.date
-          span<>= article.date.strftime('%Y /')
-          span<>= article.date.strftime('%B %d')
-      .article-summary
-        = article.summary
+          h2= link_to article.title, article
+          .date
+            span<>= article.date.strftime('%Y /')
+            span<>= article.date.strftime('%B %d')
 
-- if paginate
-  - if next_page
-    p= link_to 'Next page', next_page
+        .article-summary
+          = article.summary
+
+    = partial 'paginate', locals: {paginate: paginate, num_pages: num_pages, prev_page: prev_page, next_page: next_page, link_class: 'bottom'}

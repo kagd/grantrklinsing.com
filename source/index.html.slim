@@ -35,8 +35,11 @@
 
         .heroes.ng-cloak
           .heroes-wrapper#heroes-wrapper
-            .hero(ng-repeat="hero in diabloCtrl.heroes" ng-class="diabloCtrl.heroClasses(hero)")
+            .hero(ng-repeat="hero in diabloCtrl.heroes | orderBy:'name'" ng-class="diabloCtrl.heroClasses(hero)")
               span.name {{ hero.name }}
+              span.seasonal(ng-if="hero.seasonal" title="Season {{hero.seasonCreated}} Character")= fa_icon('leaf')
+              span.hardcore(ng-if="hero.hardcore" title="Hardcore Character")= fa_icon('heartbeat')
+              span.weapon: img(ng-src="{{hero.weaponIconUrl}}")
 
     section.grid-block.github-pane(ng-controller="GithubController as githubCtrl")
       .grid-content.ng-cloak(ng-if="githubCtrl.stats")

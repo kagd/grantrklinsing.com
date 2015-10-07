@@ -49,17 +49,8 @@ $height: 40px;
       &:hover,
       &:focus {
         border-bottom-color: $link-color;
-        // border-top-color: $link-color;
         text-shadow: 0 0 2px rgba(255,255,255,1);
-        //
-        // i {
-        //   text-shadow: 0 0 2px $link-color;
-        // }
       }
-
-      // i {
-      //   @include transition(all $default-transition-duration $default-transition-function);
-      // }
     }
   }
 
@@ -68,7 +59,7 @@ $height: 40px;
     display: block;
     font-size: $h4-font-size;
     font-weight: 100;
-    line-height: $height;
+    line-height: 30px;
 
     &:hover,
     &:focus {
