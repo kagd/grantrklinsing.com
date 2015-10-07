@@ -1,5 +1,5 @@
 #= require_self
-#= require env
+#= require ./env
 #= require_tree ./modules
 #= require_tree ./diablo
 #= require_tree ./github

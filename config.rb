@@ -207,7 +207,7 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 
-  # activate :dotenv, env: '.env.build'
+  activate :dotenv, env: '.env.build'
 end
 
 # Specify environment specific .env files
