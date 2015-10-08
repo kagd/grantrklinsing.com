@@ -7,7 +7,7 @@
       h1= current_article.title
       .date
         span<>= current_article.date.strftime('%Y /')
-        span<>= current_article.date.strftime('%B %d')
+        span<>= current_article.date.strftime('%B %-d')
 
       -if current_article.data.downloads || current_article.data.demos || current_article.data.references
         hr
