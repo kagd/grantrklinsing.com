@@ -9,7 +9,7 @@
         span<>= current_article.date.strftime('%Y /')
         span<>= current_article.date.strftime('%B %d')
 
-      -if current_article.data.downloads || current_article.data.demos
+      -if current_article.data.downloads || current_article.data.demos || current_article.data.references
         hr
       -if current_article.data.downloads
         div
@@ -32,7 +32,7 @@
       - if article_links(current_article).any?
         hr
         .article-links
-          h4 Article Links
+          h5 Article Links
           div
             - article_links(current_article).each do |links|
               = links
