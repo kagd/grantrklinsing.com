@@ -123,9 +123,12 @@ helpers do
   end
 
   def tag_link_from_article(article, &block)
-    first_tag = article.metadata[:page]['tags'].split(',')[0]
+    tags = article.metadata[:page]['tags']
+    if tags
+      first_tag = tags.split(',')[0]
 
-    link_to capture(&block), tag_path(first_tag), class: 'tag'
+      link_to capture(&block), tag_path(first_tag), class: 'tag'
+    end
   end
 
   def tag_path(tag)
