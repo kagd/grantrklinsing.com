@@ -4,7 +4,7 @@
 #= require_tree ./diablo
 #= require_tree ./github
 
-angular.module 'kagd', ['foundation', 'serviceHelpers', 'perfect_scrollbar']
+angular.module 'kagd', ['foundation', 'serviceHelpers', 'perfect_scrollbar', 'liveType']
 
 ApplicationController = ->
   ctrl = @
