@@ -133,7 +133,7 @@ StringHelpers = ->
     underscore: underscore
   }
 
-angular.module('string-helpers', [])
+angular.module('stringHelpers', [])
   .factory 'StringHelpers', StringHelpers
 
 # StringHelpers Module
@@ -180,7 +180,7 @@ JsonHelpers = (StringHelpers, _) ->
     objectKeysToSnakeCase: objectKeysToSnakeCase
   }
 
-angular.module('json-helpers', ['string-helpers', 'lodash'])
+angular.module('jsonHelpers', ['stringHelpers', 'lodash'])
   .factory 'JsonHelpers', JsonHelpers
 
 JsonHelpers.$inject = ['StringHelpers', '_']

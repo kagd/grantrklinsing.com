@@ -16,6 +16,6 @@ ServiceHelpers = (jsonHelpers) ->
     populateObjectFromResponse: populateObjectFromResponse
   }
 
-angular.module('serviceHelpers', ['json-helpers']).factory 'serviceHelpers', ServiceHelpers
+angular.module('serviceHelpers', ['jsonHelpers']).factory 'serviceHelpers', ServiceHelpers
 
 ServiceHelpers.$inject = ['jsonHelpers']

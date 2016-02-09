@@ -35,5 +35,5 @@ Helpers = ->
     underscore: underscore
   }
 
-angular.module('string-helpers', [])
+angular.module('stringHelpers', [])
   .factory 'stringHelpers', Helpers

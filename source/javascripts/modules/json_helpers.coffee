@@ -45,6 +45,6 @@ Helpers = (stringHelpers) ->
     objectKeysToSnakeCase: objectKeysToSnakeCase
   }
 
-angular.module('json-helpers', ['string-helpers'])
+angular.module('jsonHelpers', ['stringHelpers'])
   .factory 'jsonHelpers', Helpers
 Helpers.$inject = ['stringHelpers']
