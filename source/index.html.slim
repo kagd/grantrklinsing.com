@@ -25,35 +25,5 @@
 
   .grid-block.large-5.xlarge-4.shrink
     .grid-block.vertical
-      section.grid-block.diablo-pane.shrink(ng-controller="DiabloController as diabloCtrl")
-        .grid-content
-          .pane-header
-            h2= link_to '#kagd-1920', 'http://us.battle.net/d3/en/profile/kagd-1920/', target: '_blank'
-            p last seen online {{ diabloCtrl.profile.lastPlayedAt }}
-
-            .paragon
-              .level {{ diabloCtrl.profile.paragonLevel }}
-              span paragon
-
-          .heroes.ng-cloak
-            .heroes-wrapper#heroes-wrapper
-              .hero(ng-repeat="hero in diabloCtrl.heroes | orderBy:'name'" ng-class="diabloCtrl.heroClasses(hero)")
-                span.name {{ hero.name }}
-                span.seasonal(ng-if="hero.seasonal" title="Season {{hero.seasonCreated}} Character")= fa_icon('leaf')
-                span.hardcore(ng-if="hero.hardcore" title="Hardcore Character")= fa_icon('heartbeat')
-                span.weapon: img(ng-src="{{hero.weaponIconUrl}}")
-
-      section.grid-block.github-pane(ng-controller="GithubController as githubCtrl")
-        .grid-content.ng-cloak(ng-if="githubCtrl.stats")
-          .pane-header
-            i=fa_icon 'github-square'
-            h2 {{ githubCtrl.stats.numberOfCommits }} Commits
-            p to this site
-
-          .last-commit
-            span.sha
-              a(ng-href="https://github.com/{{ githubCtrl.stats.lastCommit.repo }}/commit/{{ githubCtrl.stats.lastCommit.sha }}" target="_blank") \#{{ githubCtrl.shortSha(githubCtrl.stats.lastCommit.sha) }}
-
-            span.commit-date last commit {{ githubCtrl.stats.lastCommit.timeAgo }}
-
-            blockquote "{{ githubCtrl.stats.lastCommit.message }}"
+      kagd-diablo
+      kagd-github

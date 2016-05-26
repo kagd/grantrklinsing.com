@@ -20,5 +20,5 @@ gem "builder",            "~> 3.0"
 gem 'capistrano',         '~> 3.4.0'
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-angular',         '~> 1.4.5'
+  gem 'rails-assets-angular', '~> 1.5.0'
 end

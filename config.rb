@@ -51,6 +51,12 @@ sprockets.append_path File.join root, 'node_modules', 'perfect-scrollbar', 'dist
 sprockets.append_path File.join root, 'node_modules', 'angular-perfect-scrollbar', 'src'
 
 ###
+# Templates
+###
+page "/templates/diablo/diablo_component.html", layout: false
+page "/templates/github/github_component.html", layout: false
+
+###
 # Compass
 ###
 

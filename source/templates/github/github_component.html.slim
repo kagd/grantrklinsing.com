@@ -1,0 +1,14 @@
+section.grid-block.github-pane
+  .grid-content.ng-cloak(ng-if="$ctrl.stats")
+    .pane-header
+      i=fa_icon 'github-square'
+      h2 {{ $ctrl.stats.numberOfCommits }} Commits
+      p to this site
+
+    .last-commit
+      span.sha
+        a(ng-href="https://github.com/{{ $ctrl.stats.lastCommit.repo }}/commit/{{ $ctrl.stats.lastCommit.sha }}" target="_blank") \#{{ $ctrl.shortSha($ctrl.stats.lastCommit.sha) }}
+
+      span.commit-date last commit {{ $ctrl.stats.lastCommit.timeAgo }}
+
+      blockquote "{{ $ctrl.stats.lastCommit.message }}"

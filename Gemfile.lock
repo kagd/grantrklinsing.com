@@ -118,7 +118,7 @@ GEM
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rails-assets-angular (1.4.5)
+    rails-assets-angular (1.5.5)
     rake (10.4.2)
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
@@ -169,7 +169,7 @@ DEPENDENCIES
   middleman-deploy (~> 1.0)
   middleman-dotenv (~> 1.0)
   middleman-syntax (~> 2.0.0)
-  rails-assets-angular (~> 1.4.5)!
+  rails-assets-angular (~> 1.5.0)!
   redcarpet (~> 3.3.2)
   slim (~> 3.0.6)
 
