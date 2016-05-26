@@ -1,17 +1,16 @@
-section.grid-block.diablo-pane.shrink
-  .grid-content
-    .pane-header
-      h2= link_to '#kagd-1920', 'http://us.battle.net/d3/en/profile/kagd-1920/', target: '_blank'
-      p last seen online {{ $ctrl.profile.lastPlayedAt }}
+.grid-content
+  .pane-header
+    h2= link_to '#kagd-1920', 'http://us.battle.net/d3/en/profile/kagd-1920/', target: '_blank'
+    p last seen online {{ $ctrl.profile.lastPlayedAt }}
 
-      .paragon
-        .level {{ $ctrl.profile.paragonLevel }}
-        span paragon
+    .paragon
+      .level {{ $ctrl.profile.paragonLevel }}
+      span paragon
 
-    .heroes.ng-cloak
-      .heroes-wrapper#heroes-wrapper
-        .hero(ng-repeat="hero in $ctrl.heroes | orderBy:'name'" ng-class="$ctrl.heroClasses(hero)")
-          span.name {{ hero.name }}
-          span.seasonal(ng-if="hero.seasonal" title="Season {{hero.seasonCreated}} Character")= fa_icon('leaf')
-          span.hardcore(ng-if="hero.hardcore" title="Hardcore Character")= fa_icon('heartbeat')
-          span.weapon: img(ng-src="{{hero.weaponIconUrl}}")
+  .heroes.ng-cloak
+    .heroes-wrapper#heroes-wrapper
+      .hero(ng-repeat="hero in $ctrl.heroes | orderBy:'name'" ng-class="$ctrl.heroClasses(hero)")
+        span.name {{ hero.name }}
+        span.seasonal(ng-if="hero.seasonal" title="Season {{hero.seasonCreated}} Character")= fa_icon('leaf')
+        span.hardcore(ng-if="hero.hardcore" title="Hardcore Character")= fa_icon('heartbeat')
+        span.weapon: img(ng-src="{{hero.weaponIconUrl}}")
