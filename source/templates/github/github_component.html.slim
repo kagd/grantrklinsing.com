@@ -10,4 +10,4 @@
 
     span.commit-date last commit {{ $ctrl.stats.lastCommit.timeAgo }}
 
-    blockquote "{{ $ctrl.stats.lastCommit.message }}"
+    blockquote(ng-bind-html="$ctrl.lastCommitMessage()")
