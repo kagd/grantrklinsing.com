@@ -1,4 +1,4 @@
-.grid-content.ng-cloak(ng-if="$ctrl.stats")
+.grid-content(ng-if="$ctrl.stats.lastCommit")
   .pane-header
     i=fa_icon 'github-square'
     h2 {{ $ctrl.stats.numberOfCommits }} Commits
