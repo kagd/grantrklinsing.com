@@ -1,0 +1,12 @@
+a(ng-click="$ctrl.toggle()")
+  | Tags
+  i=fa_icon('chevron-down')
+
+.actionsheet
+  ul(ng-show="$ctrl.open")
+    - tag_counts.each do |tag|
+      li
+        = tag_link tag.first do
+          span.tag-image= tag_image(tag.first)
+          span.tag-name= tag.first
+          span.tag-count.badge.secondary(title="#{ tag.last } #{ tag.first } articles")= tag.last

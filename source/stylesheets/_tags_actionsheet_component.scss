@@ -1,0 +1,36 @@
+kagd-tags-actionsheet {
+  .actionsheet {
+    position: relative;
+    z-index: 20;
+  }
+
+  li {
+    border-bottom: 1px solid $gray-lighter;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  ul {
+    box-shadow: 5px 5px 0px rgba(0,0,0,0.05);
+    border: 2px solid $gray-lighter;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    right: -10px;
+    position: absolute;
+    top: 5px;
+    width: 180px;
+
+    a {
+      background-color: lighten($gray-lighter, 6%);
+      display: block;
+      padding: 5px 8px;
+    }
+  }
+
+  .badge.secondary {
+    background-color: darken($gray-lighter, 1%);
+  }
+}

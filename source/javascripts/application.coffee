@@ -4,6 +4,7 @@
 #= require_tree ./menu
 #= require_tree ./diablo
 #= require_tree ./github
+#= require_tree ./tags_actionsheet
 
 angular.module 'kagd', [
   'serviceHelpers',
