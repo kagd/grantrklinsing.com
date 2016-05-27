@@ -1,5 +1,4 @@
 #= require_self
-#= require ./env
 #= require_tree ./modules
 #= require_tree ./menu
 #= require_tree ./diablo
@@ -12,3 +11,5 @@ angular.module 'kagd', [
   'liveType',
   'perfectScrollbar'
 ]
+
+.constant 'API_HOST', window.env.API_HOST
