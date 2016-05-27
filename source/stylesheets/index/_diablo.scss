@@ -95,7 +95,6 @@
 
         .weapon {
           top: -1.7rem;
-          @include transform(rotate(-15deg));
         }
       }
     }
@@ -172,8 +171,7 @@
     position: absolute;
     top: -1.5rem;
     // @include transform(rotate(0deg));
-    @include transition(top $transition-duration-fast ease-out,
-                        transform $transition-duration-fast ease-out);
+    @include transition(top $transition-duration-fast ease-out);
   }
 
   @include breakpoint(large) {
