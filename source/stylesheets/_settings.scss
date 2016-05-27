@@ -633,5 +633,7 @@ $font-family-bernina: "jaf-bernina-sans-condensed", "Helvetica Neue", Helvetica,
 // Compass Transition Settings
 $default-transition-property : all;
 $default-transition-duration : 250ms;
+$transition-duration-fast    : 150ms;
+$transition-duration-slow    : 500ms;
 $default-transition-function : ease-in-out;
 $default-transition-delay    : false;

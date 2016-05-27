@@ -9,7 +9,10 @@
 
   .heroes.ng-cloak
     .heroes-wrapper#heroes-wrapper
-      .hero(ng-repeat="hero in $ctrl.heroes | orderBy:'name'" ng-class="$ctrl.heroClasses(hero)")
+      a.hero( ng-repeat="hero in $ctrl.heroes | orderBy:'name'" 
+              ng-class="$ctrl.heroClasses(hero)"
+              ng-href="http://us.battle.net/d3/en/profile/kagd-1920/hero/{{ hero.id }}" 
+              target="_blank")
         span.name {{ hero.name }}
         span.seasonal(ng-if="hero.seasonal" title="Season {{hero.seasonCreated}} Character")= fa_icon('leaf')
         span.hardcore(ng-if="hero.hardcore" title="Hardcore Character")= fa_icon('heartbeat')
