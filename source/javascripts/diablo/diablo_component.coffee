@@ -1,4 +1,4 @@
-Controller = (diabloService) ->
+Controller = (diabloService, Ps) ->
   ctrl = @
   response = diabloService.get()
   ctrl.heroes = response.heroes
@@ -8,11 +8,12 @@ Controller = (diabloService) ->
     "#{ hero.class }-#{ hero.gender }"
 
   container = document.getElementById('heroes-wrapper');
-  Ps.initialize(container);
+  ctrl.$onInit = ->
+    Ps.initialize(container);
 
   return
 
-Controller.$inject = ['diabloService']
+Controller.$inject = ['diabloService', 'Ps']
 angular.module('kagd').component('kagdDiablo', {
   templateUrl: '/templates/diablo/diablo_component.html',
   controller: Controller

@@ -1,4 +1,4 @@
-.grid-content(ng-if="$ctrl.profile.lastPlayedAt")
+.grid-content(ng-show="$ctrl.profile.lastPlayedAt")
   .pane-header
     h2= link_to '#kagd-1920', 'http://us.battle.net/d3/en/profile/kagd-1920/', target: '_blank'
     p last seen online {{ $ctrl.profile.lastPlayedAt }}
