@@ -1,3 +1,5 @@
+require 'pathname'
+
 ###
 # Page options, layouts, aliases and proxies
 ###
@@ -24,8 +26,11 @@ with_layout false do
 
   ###
   # Angular Templates
+  # - automatically add pages under the /templates dir
   ###
-  page "/templates/diablo/diablo_component.html"
-  page "/templates/github/github_component.html"
-  page "/templates/tags_actionsheet/tags_actionsheet_component.html"
+  Dir.glob(project_root + '/source/templates/**/*.slim').each do |file|
+    matches = file.match('.+templates\/([\w\/]+)')
+    path = matches[1]
+    page "/templates/#{ path }.html"
+  end
 end
