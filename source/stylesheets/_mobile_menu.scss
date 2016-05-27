@@ -1,14 +1,14 @@
 .mobile-menu {
-  background-color: darken($brand-primary, 5%);
+  background-color: darken($gray-lighter, 5%);
+  box-shadow: 5px 5px 0px rgba(17,137,182,0.5);
   height: 0;
-  overflow: hidden;
   right: 0;
   margin: 0 1.5rem 0 0;
   opacity: 0;
+  overflow: hidden;
   position: absolute;
   top: 67px;
   @include transition(all $default-transition-duration $default-transition-function);
-
 
   ul {
     float: none;
@@ -21,7 +21,7 @@
   }
 
   a {
-    color: #fff;
+    color: $gray-dark;
     display: block;
     font-size: $h2-font-size;
     font-weight: 300;
@@ -30,7 +30,7 @@
 
     &:hover,
     &:focus {
-      color: #fff;
+      color: darken($gray-dark, 5%);
       text-decoration: none;
     }
   }
@@ -39,14 +39,14 @@
     margin-right: 0.5rem;
   }
 
-  @include breakpoint(medium) {
+  @include breakpoint(large) {
     display: none;
   }
 }
 
 .menu-open {
   .mobile-menu {
-    height: 192px;
+    height: 250px;
     opacity: 1;
   }
 }
