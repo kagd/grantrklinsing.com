@@ -11,7 +11,7 @@ gem 'middleman-deploy',   '~> 1.0'
 gem 'font-awesome-sass',  '~> 4.4.0'
 gem 'compass',            '~> 1.0.3'
 gem 'middleman-dotenv',   '~> 1.0'
-# gem 'sprockets-traceur'
+gem 'byebug'
 
 # For feed.xml.builder
 gem "builder",            "~> 3.0"
