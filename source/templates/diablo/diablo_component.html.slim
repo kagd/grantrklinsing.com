@@ -3,10 +3,10 @@
   
   .pane-header(ng-if="!$ctrl.activity.isActive()")
     h2= link_to '#kagd-1920', 'http://us.battle.net/d3/en/profile/kagd-1920/', target: '_blank'
-    p last seen online {{ $ctrl.profile.lastPlayedAt }}
+    p last seen online {{ $ctrl.profile.last_played_at }}
 
     .paragon
-      .level {{ $ctrl.profile.paragonLevel }}
+      .level {{ $ctrl.profile.paragon_level }}
       span paragon
   
   .heroes.ng-cloak(ng-if="!$ctrl.activity.isActive()")
