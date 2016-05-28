@@ -7,13 +7,6 @@
     margin-top: 2rem;
   }
 
-  @include breakpoint(xlarge) {
-    .introduction-pane {
-      padding-left: 6rem;
-      padding-right: 6rem;
-    }
-  }
-
   @include breakpoint(xxlarge) {
     .introduction-pane {
       padding-left: 9rem;

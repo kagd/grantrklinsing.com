@@ -1,11 +1,9 @@
-.index .diablo-pane {
-  background: lighten($gray-darker, 10%) url('/images/icon_diablo.svg') no-repeat 1.75rem 0.75rem;
+kagd-diablo {
+  background: lighten($gray-darker, 10%) url('/images/icon_diablo.svg') no-repeat 1rem 0.75rem;
   background-size: 50px 50px;
   border-bottom: 1px solid darken($gray-darker, 5%);
   border-top: 1px solid darken($gray-darker, 5%);
-  margin-left: -1rem;
-  margin-right: -1rem;
-  padding: 1rem 1rem 0;
+  padding: 1rem 0 0;
 
   .grid-content {
     position: relative;
@@ -15,6 +13,7 @@
     border-bottom: 1px solid lighten($gray-darker, 5%);
     margin-left: -1rem;
     margin-right: -1rem;
+    min-height: 54px;
     padding: 0 1rem 1rem;
   }
 
@@ -23,11 +22,26 @@
     font-size: $h1-font-size;
     line-height: 1;
     margin: 0 0 0 50px;
+
+    a {
+      border-bottom: 1px solid transparent;
+      display: inline-block;
+      line-height: 1;
+
+      &:hover {
+        border-bottom-color: lighten($link-color, 30%);
+        text-decoration: none;
+      }
+    }
   }
 
   a {
     color: lighten($link-color, 30%);
     font-weight: 300;
+
+    &:hover {
+      color: lighten($link-color, 30%);
+    }
   }
 
   p {

@@ -1,9 +1,15 @@
 #= require ./github_service
 
-Controller = (githubService, $sce) ->
+Controller = (githubService, $sce, activityService) ->
   ctrl = @
-  response = githubService.get()
-  ctrl.stats = response.stats
+  ctrl.activity = activityService.init()
+  ctrl.activity.start()
+  githubService.get()
+    .then ( response ) ->
+      ctrl.stats = response.data
+
+    .finally ->
+      ctrl.activity.stop()
 
   ctrl.shortSha = (sha) ->
     sha.slice(0, 10) if sha
@@ -13,7 +19,7 @@ Controller = (githubService, $sce) ->
 
   return
 
-Controller.$inject = ['githubService', '$sce']
+Controller.$inject = ['githubService', '$sce', 'activityService']
 angular.module('kagd').component('kagdGithub', {
   templateUrl: '/templates/github/github_component.html',
   controller: Controller

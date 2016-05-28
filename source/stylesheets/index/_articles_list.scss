@@ -43,18 +43,6 @@
     }
   }
 
-  @include breakpoint(xlarge) {
-    article {
-      padding-left: 6rem;
-      padding-right: 6rem;
-    }
-
-    .section-header {
-      padding-left: 7rem;
-      padding-right: 7rem;
-    }
-  }
-
   @include breakpoint(xxlarge) {
     article {
       padding-left: 9rem;

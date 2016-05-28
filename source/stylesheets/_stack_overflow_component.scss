@@ -1,0 +1,118 @@
+kagd-stack-overflow {
+  $base-color: $gray-lighter;
+  background-color: $base-color;
+
+  .pane-header {
+    border-bottom: 1px solid darken($base-color, 5%);
+    padding: 10px 5px 12px 15px;
+    position: relative;
+
+    .fa {
+      font-size: 32px;
+      left: 15px;
+      position: absolute;
+      top: 20px;
+    }
+
+    h2,
+    h5 {
+      color: $gray-dark;
+      font-family: $font-family-bernina;
+      font-weight: 300;
+      line-height: 36px;
+      margin: 0 0 0 40px;
+    }
+
+    h2 {
+      font-size: $h1-font-size;
+    }
+
+    h5 {
+      line-height: 1;
+      margin-top: -5px;
+    }
+  }
+
+  li.question {
+    border-bottom: 1px solid darken($base-color, 5%);
+    border-top: 1px solid lighten($base-color, 3%);
+    line-height: 1;
+    min-height: 50px;
+    padding: 6px 10px;
+    position: relative;;
+
+    .metadata {
+      display: inline-block;
+      left: 10px;
+      position: absolute;
+      text-align: center;
+      top: 6px;
+      vertical-align: top;
+      width: 30px;
+    }
+
+    .score {
+      display: block;
+      font-size: $h2-font-size;
+    }
+
+    .title,
+    .tags {
+      display: block;
+      padding-left: 40px;
+    }
+
+    .tags {
+      line-height: 1;
+      margin-top: 5px;
+
+      li {
+
+      }
+    }
+
+    .label.dark {
+      background-color: darken($base-color, 15%);
+      font-size: 10px;
+      padding: 0.1rem 0.25rem 0.2rem;
+    }
+
+    &.accepted-answered {
+      .fa {
+        display: inline-block;
+      }
+    }
+
+    .fa {
+      color: $brand-success;
+      display: none;
+      font-size: 14px;
+      margin: 3px 0 0 0;
+    }
+  }
+
+  .reputation {
+    color: $gray-dark;
+    font-family: $font-family-bernina;
+    right: 1rem;
+    position: absolute;
+    top: 12px;
+
+    .level {
+      font-size: 52px;
+      font-weight: 100;
+      line-height: 41px;
+      padding-right: 10px;
+    }
+
+    span {
+      display: block;
+      font-size: $h6-font-size;
+      right: 0;
+      position: absolute;
+      transform-origin: 90% 45%;
+      top: 0;
+      @include transform(rotate(-90deg));
+    }
+  }
+}

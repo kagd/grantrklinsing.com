@@ -1,5 +1,5 @@
 .grid-block.vertical.medium-horizontal
-  .grid-block.large-7.xlarge-8.shrink
+  .grid-block.medium-12.large-7.xlarge-5.xxlarge-6.shrink
     .grid-content
       section.introduction-pane
         h1 Grant Klinsing
@@ -23,7 +23,11 @@
                 span<>= article.date.strftime('%Y /')
                 span<>= article.date.strftime('%B %-d')
 
-  .grid-block.large-5.xlarge-4
-    .grid-block.vertical.ng-cloak
-      kagd-diablo.grid-block.diablo-pane.shrink
-      kagd-github.grid-block.github-pane
+  .grid-block.small-12.large-5.xlarge-3.xxlarge-3.ng-cloak
+    .grid-block.vertical
+      kagd-stack-overflow.grid-block
+  
+  .grid-block.small-12.large-12.xlarge-4.xxlarge-3
+    .grid-block.medium-vertical.large-horizontal.xlarge-vertical
+      kagd-diablo.grid-block
+      kagd-github.grid-block

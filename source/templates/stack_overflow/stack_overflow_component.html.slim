@@ -1,0 +1,21 @@
+.grid-content.collapse
+  kagd-activity(id="$ctrl.activity.id")
+  
+  .pane-header(ng-if="!$ctrl.activity.isActive()")
+    = fa_icon('stack-overflow')
+    h2 Stack Overflow
+    h5 Answers
+    
+    .reputation(ng-show="$ctrl.answers.length > 0")
+      .level(ng-bind="$ctrl.answers[0].owner.reputation")
+      span(title="Reputation") rep.
+
+  ul.list-unstyled(ng-if="!$ctrl.activity.isActive()")
+    li.question(ng-repeat="question in $ctrl.questions" ng-class="{'accepted-answered': question.answer.is_accepted}")
+      span.metadata
+        span.score(ng-bind="question.answer.score")
+        span(title="Answer Accepted")= fa_icon 'check'
+      a.title(ng-bind-html="$ctrl.toHTML(question.title)" ng-href="{{ question.link }}" target="_blank")
+      ul.list-inline.tags
+        li(ng-repeat="tag in question.tags")
+          span.label.dark(ng-bind="tag")

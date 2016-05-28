@@ -1,19 +1,26 @@
-Controller = (diabloService, Ps) ->
+Controller = (diabloService, Ps, activityService, $timeout) ->
   ctrl = @
-  response = diabloService.get()
-  ctrl.heroes = response.heroes
-  ctrl.profile = response.profile
+  ctrl.activity = activityService.init()
+
+  ctrl.activity.start()
+  diabloService.get()
+    .then ( response ) ->
+      ctrl.heroes = response.data.heroes
+      ctrl.profile = response.data.profile
+      ctrl.activity.stop()
+      $timeout ->
+        container = document.getElementById('heroes-wrapper');
+        Ps.initialize(container);
+      , 100
+    .finally ->
+      ctrl.activity.stop()
 
   ctrl.heroClasses = (hero) ->
     "#{ hero.class }-#{ hero.gender }"
 
-  container = document.getElementById('heroes-wrapper');
-  ctrl.$onInit = ->
-    Ps.initialize(container);
-
   return
 
-Controller.$inject = ['diabloService', 'Ps']
+Controller.$inject = ['diabloService', 'Ps', 'activityService', '$timeout']
 angular.module('kagd').component('kagdDiablo', {
   templateUrl: '/templates/diablo/diablo_component.html',
   controller: Controller

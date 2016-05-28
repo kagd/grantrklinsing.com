@@ -1,13 +1,15 @@
-.grid-content(ng-show="$ctrl.profile.lastPlayedAt")
-  .pane-header
+.grid-content
+  kagd-activity(id="$ctrl.activity.id")
+  
+  .pane-header(ng-if="!$ctrl.activity.isActive()")
     h2= link_to '#kagd-1920', 'http://us.battle.net/d3/en/profile/kagd-1920/', target: '_blank'
     p last seen online {{ $ctrl.profile.lastPlayedAt }}
 
     .paragon
       .level {{ $ctrl.profile.paragonLevel }}
       span paragon
-
-  .heroes.ng-cloak
+  
+  .heroes.ng-cloak(ng-if="!$ctrl.activity.isActive()")
     .heroes-wrapper#heroes-wrapper
       a.hero( ng-repeat="hero in $ctrl.heroes | orderBy:'name'" 
               ng-class="$ctrl.heroClasses(hero)"

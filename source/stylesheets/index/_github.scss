@@ -1,4 +1,4 @@
-.index .github-pane {
+kagd-github {
   background-color: $gray-darker;
   color: $gray;
 
@@ -15,19 +15,22 @@
   .fa {
     color: $gray;
     font-size: 42px;
+    margin-bottom: 5px;
     position: absolute;
   }
 
   h2 {
     color: #fff;
     font-family: $font-family-bernina;
-    font-size: 36px;
-    font-weight: 100;
+    font-size: $h1-font-size;
+    font-weight: 300;
     line-height: 1;
     margin: 0 0 0 50px;
+    padding-top: 4px;
   }
 
   p {
+    font-size: $h6-font-size;
     line-height: 1;
     margin: 0 0 0 50px;
   }

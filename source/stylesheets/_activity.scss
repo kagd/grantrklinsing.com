@@ -1,0 +1,46 @@
+@keyframes activity-bar-position {
+  0%   {
+    @include transform(translateX(-100%));
+  }
+  50%   {
+    @include transform(translateX(100%));
+  }
+  100% {
+    @include transform(translateX(-100%));
+  }
+}
+
+@keyframes activity-bar-color {
+  0%   {
+    background-color: $brand-primary;
+  }
+  33%   {
+    background-color: $brand-secondary;
+  }
+  66%   {
+    background-color: $brand-success;
+  }
+  100% {
+    background-color: $brand-primary;
+  }
+}
+
+kagd-activity {
+  display: block;
+  
+  .activity-container {
+    display: inline-block;
+    height: 2px;
+    margin: 8px 12px;
+    overflow: hidden;
+    width: 90%;
+  }
+
+  .bar {
+    animation: activity-bar-position 1s infinite, activity-bar-color 3s infinite;
+    background-color: $brand-primary;
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
