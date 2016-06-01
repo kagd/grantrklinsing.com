@@ -15,7 +15,7 @@ Controller = (githubService, $sce, activityService) ->
     sha.slice(0, 10) if sha
 
   ctrl.lastCommitMessage = ->
-    $sce.trustAsHtml("\"#{ctrl.stats.lastCommit.message}\"")
+    $sce.trustAsHtml("\"#{ctrl.stats.last_commit.message}\"")
 
   return
 
